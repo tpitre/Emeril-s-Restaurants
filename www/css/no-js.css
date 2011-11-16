@@ -1,0 +1,36 @@
+/* ===========================================
+   CSSOff Brosers with JavaScript disabled
+   =========================================== */
+
+header#main-header { background-color: #0D7EA1 }
+section#obstacles header { margin-bottom: 0 }
+section#obstacles .obstacle-options { display: none }
+section#obstacles .obstacle-detail {
+	width: 100%;
+	float: none;
+	height: 630px;
+	padding: 2.8em 0;	
+}
+section#obstacles .obstacle-detail li,
+section#obstacles .obstacle-detail li.obstacle-hamster-wheel {
+	padding: 3em 0 0;	
+	height: 650px;
+	float: left;
+	margin: 0 2%;
+	width: 29%;
+	overflow: hidden;
+}
+section#contestant form.contestant-form {
+    min-height: 530px;
+}
+section#contestant form.contestant-form div {
+    margin-bottom: 1em;
+    position: relative;
+}
+section#contestant form.contestant-form .custom-select {
+    display: block;
+    color: #000;
+    padding: 2px;
+    width: 100%;
+    font-size: 1em;
+}

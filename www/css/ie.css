@@ -1,0 +1,86 @@
+/* ===========================================
+   CSSOff IE Specific CSS
+   =========================================== */
+
+.oldie header#main-header {
+	background:none;
+	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0C000000,endColorstr=#0C000000);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0C000000,endColorstr=#0C000000);
+	zoom: 1;
+}
+.oldie header#main-header.active {
+	background:none;
+	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#E500779B,endColorstr=#E500779B);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#E500779B,endColorstr=#E500779B);
+	zoom: 1;
+}
+.oldie section#obstacles  {
+	border-top: 7px solid #EB512B;
+	border-bottom: 7px solid #EB512B;
+}
+.oldie section#prizes {
+	border-top: 7px solid #78A835;
+	border-bottom: 7px solid #78A835;
+}
+.oldie section#contestant { border-top: 7px solid #76B3C6; }
+.oldie footer#main-footer .site-meta {
+	border-top: 7px solid #76B3C6;
+	border-bottom: 7px solid #76B3C6;
+}
+
+/* @group IE 6 & 7 Styles
+---------------------------------------------- */
+.older * { zoom: 1 }
+.older section#obstacles h1,
+.older section#prizes h1,
+.older section#contestant h1 { padding-bottom: .2em }
+.older section#obstacles {
+	position: relative;
+	overflow: hidden;
+}
+.older section#prizes ul.prize-options .figure.prize-tv { margin-top: 0; }
+.older section#contestant form.contestant-form .team-color { width: 46.05263%; /* 203 - 28 / 380 */ }
+.older section#contestant form.contestant-form .gender {
+	width: 34.73684%; /* 160 - 28 / 380 */
+	margin-right: 7.36842%; /* 28 / 380 */
+}
+.older section#contestant form.contestant-form .select-arrow {
+	top: 1px;
+	right: -29px;
+	padding: 15px 0;
+}
+
+/* IE 6 Specific */
+
+.ie6 img,
+.ie6 li,
+.ie6 ul,
+.ie6 span { behavior: url(js/libs/iepngfix.htc) }
+.ie6 section .content,
+.ie6 nav#main-nav,
+.ie6 footer#main-footer { width: 940px; }
+.ie6 header#main-header {
+	position: absolute;
+	bottom: auto;
+	top: expression(eval(document.documentElement.scrollTop));}
+}
+.ie6 section#home .content { background: none }
+.ie6 section#obstacles .obstacle-options .figure { width: 43% }
+.ie6 section#obstacles .obstacle-options .figure img { width: 150px }
+.ie6 section#obstacles .obstacle-detail {
+	width: 430px;
+	overflow: hidden;
+	background: transparent url(../img/splash-green-sm.png) no-repeat top center;
+}
+.ie6 section#obstacles .obstacle-detail .obstacle-item { background: none }
+.ie6 section#obstacles .obstacle-detail .obstacle-item img { width: 92% }
+.ie6 section#contestant form.contestant-form .team-color { width: 152px }
+.ie6 section#contestant form.contestant-form .gender { 
+	width: 96px;
+	margin-right: 28px;
+}
+.ie6 section#contestant form.contestant-form .select-arrow {
+	top: 2px;
+	padding: 14px 0 13px;
+}
+/* @end */
