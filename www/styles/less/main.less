@@ -10,28 +10,32 @@
 
 
 // LESS Variables
+@main-font-color: #3E4549;
+@main-link-color: #069;
+@main-transition: all .3s ease-in-out;
 
-@main-link: #ccc;
+
+.trans {
+  -webkit-transition: @main-transition;
+  -moz-transition: @main-transition;
+  -o-transition: @main-transition;
+  -ms-transition: @main-transition;
+  transition: @main-transition;
+}
 
 /* @group Base Styles
 ---------------------------------------------- */
-html { height: 100% }
 body {
-    font: normal 100% OpenSansSemiBold, Arial, sans-serif;
-    color: #fff;
+    font: normal 100% "proxima-nova-1","proxima-nova-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: @main-font-color;
     padding: 0;
     margin: 0;
-    height: 100%;
-    background: #80C1D6 url('../img/texture-blue.gif') repeat fixed center top;
 }
-a {
-    color: @main-link;
+a,
+a:visited {
+    color: @main-link-color;
     text-decoration: none;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    .trans;
 }
 a:hover,
 a:focus,
@@ -41,22 +45,40 @@ a:active {
 }
 h1,
 h2 {
-    font-family: 'KomikaTitle-PaintRegular', 'Comic Sans MS', Arial, sans-serif;
+    font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: -1px;
 }
 h1 {
     font-size: 2.5em; /* 40 / 16 */
-    text-shadow: 3px 3px 0 rgba(0,0,0,.25);
 }
 h2 {
     font-size: 2.0625em; /* 33 / 16 */
+}
+h3 {
+  font-weight: bold;
 }
 /* @end */
 
 /* @group Main Styles 
 ---------------------------------------------- */
 
+@base: #f938ab;
 
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  box-shadow:         @style @c;
+  -webkit-box-shadow: @style @c;
+  -moz-box-shadow:    @style @c;
+}
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.box { 
+  color: saturate(@base, 5%);
+  border-color: lighten(@base, 30%);
+  div { .box-shadow(0 0 5px, 30%) }
+}
 
 
 /* @end */
@@ -64,327 +86,7 @@ h2 {
 /* @group Media Queries
 --------------------------------------------- */
 @media screen and (min-width: 501px) and (max-width: 940px) { 
-    section#obstacles,
-    section#prizes,
-    section#contestant { padding: 3.1em 1.2em 3em }
-    section#obstacles header,
-    section#prizes header,
-    section#contestant header { margin-bottom: 3.2em }
-    section#obstacles .obstacle-options .figure { min-height: 202px }
-    section#obstacles .obstacle-title h2 { font-size: 180% }
-    section#obstacles .obstacle-title p { font-size: 110% }
-    section#obstacles .obstacle-detail li.obstacle-sundae-slide,
-    section#obstacles .obstacle-detail li.obstacle-down-hatch { padding-top: 4.1em }
-    section#obstacles .obstacle-detail li.obstacle-wringer { padding-top: 3.8em }
+
 }
 
-@media screen and (min-width: 501px) and (max-width: 800px) { 
-    section#home .content { padding: 6.2em 1.9em 3em }
-    section#home h2 {
-        font-size: 310%;
-        margin: 1.1em 0 .3em;
-    }
-    section#home p { font-size: 120% }
-    section#obstacles,
-    section#prizes,
-    section#contestant {
-        padding: 2em 1.2em 1.6em;
-        height: 92%;
-    }
-    section#obstacles header,
-    section#prizes header,
-    section#contestant header { margin-bottom: 2.8em }
-    section#obstacles .obstacle-options .figcaption { font-size: 72% }
-    section#obstacles .obstacle-detail li.obstacle-sundae-slide,
-    section#obstacles .obstacle-detail li.obstacle-hamster-wheel,
-    section#obstacles .obstacle-detail li.obstacle-down-hatch { padding-top: 3.2em }
-    section#obstacles .obstacle-detail li.obstacle-down-hatch .obstacle-title { margin-left: 1em }
-    section#obstacles .obstacle-detail li.obstacle-hamster-wheel .obstacle-title {
-        margin-left: 1.6em;
-        margin-bottom: 4em;
-    }
-    section#prizes img { max-width: 80% }
-    section#prizes ul.prize-options .figure.prize-keyboard { margin-top: 1.9em }
-    section#prizes ul.prize-options .figure.prize-tv { margin-top: -5em }
-    section#contestant form.contestant-form .team-color,
-    section#contestant form.contestant-form .gender {
-        width: 100%;
-        float: none;
-    }
-    section#contestant form.contestant-form .team-color .sb-custom { z-index: 20 }
-    section#contestant form.contestant-form .gender .sb-custom { z-index: 15 }
-    section#contestant form.contestant-form .team-color .sb-dropdown,
-    section#contestant form.contestant-form .gender .sb-dropdown { width: 92.87272% }
-    section#contestant form.contestant-form { min-height: 620px }
-    section#contestant form.contestant-form button:hover em {
-        font-size: 1.7em;
-        padding-top: 1.7em;
-    }
-    section#contestant .count-down .clock-frame { max-width: 92% }
-    section#contestant .count-down .counter { font-size: 7.4em }
-    footer#main-footer { padding: 0 1em 1em }
-    footer#main-footer p,
-    footer#main-footer p.legal { font-size: .775em }
-    footer#main-footer address { font-size: .85em }
-}
-
-@media screen and (min-width: 501px) and (min-height: 600px) and (max-height: 820px) and (max-width: 800px) {
-	#main-container { height: auto }
-}
-
-@media screen and (min-width: 501px) and (max-width: 700px) { 
-    section#obstacles .obstacle-options .figure { min-height: 188px }
-    section#contestant .count-down .clock-frame { max-width: 90% }
-    section#contestant form.contestant-form button img {
-        width: 144px;
-        min-height: 126px;
-        margin-left: -72px;
-    }
-    section#contestant form.contestant-form button em {
-        font-size: 1.3em;
-        padding-top: 2.2em;
-    }
-    section#contestant form.contestant-form button:hover em {
-        font-size: 1.4em;
-        padding-top: 2em;
-    }
-    section#contestant .count-down .counter { font-size: 6.6em }
-}
-
-@media screen and (min-width: 501px) and (max-width: 600px) { 
-    #main-nav { padding: 2px 0 }
-    #main-nav ul li { font-size: .95em }
-    section#obstacles .obstacle-options .figure { min-height: 166px }
-    section#contestant form.contestant-form button em {
-        font-size: 1.1em;
-        padding-top: 2.8em;
-    }
-    section#contestant form.contestant-form button:hover em {
-        font-size: 1.1em;
-        padding-top: 2.5em;
-    }
-    section#contestant .count-down .counter { font-size: 5.3em }
-}
-
-@media screen and (max-width: 500px) { 
-    #main-nav { padding: 2px 0 }
-    #main-nav ul li { font-size: .7em }
-    section#home,
-    section#home .content { padding-bottom: 2.3em }
-    section#home .content { padding-top: 3.9em }
-    section#home h1 img {
-        float: left;
-        margin-left: 2.5%;
-        max-width: 45%;
-    }
-    section#home .content .tagline {
-        font-size: 50%;
-        width: 50%;
-        margin-right: 2.5%;
-        float: right;
-    }
-    section#home h2 { text-shadow: 1px 1px 0 #fff }
-    section#home p { font-size: 110% }
-    section#obstacles h1,
-    section#prizes h1,
-    section#contestant h1 {
-        float: none;
-        width: 100%;
-        text-align: center;
-        padding-bottom: .5em;
-        border-bottom: 8px dotted #EEF13F;
-    }
-    section .hr { display: none }
-    section#obstacles,
-    section#prizes,
-    section#contestant { padding: 2em 1.2em 1.9em }
-    section#obstacles header,
-    section#prizes header,
-    section#contestant header { margin-bottom: 2.8em }
-    section#obstacles .obstacle-options {
-        float: none;
-        width: 100%;
-    }
-    section#obstacles .obstacle-options .figure,
-    section#obstacles .obstacle-options .figure.even {
-        width: 14.69%;
-        margin: 0 1%;
-        min-height: 66px;
-    }
-    section#obstacles .obstacle-options .figure p { margin: 10px auto 6px }
-    section#obstacles .obstacle-options .figcaption { display: none }
-    section#obstacles .obstacle-detail {
-        top: 6em;
-        width: 70%;
-        float: none;
-        height: 430px;
-        margin: 0 auto;
-    }
-    section#obstacles .obstacle-title { text-shadow: 2px 2px 0 rgba(0,0,0,.25) }
-    section#obstacles .obstacle-detail li .obstacle-title {
-        margin-bottom: 2.6em;
-        font-size: 60%;
-    }
-    section#obstacles .obstacle-detail li {
-        padding-top: 2.1em;
-        -webkit-background-size: 137px 120px;
-        -moz-background-size: 137px 120px;
-        -o-background-size: 137px 120px;
-        -ms-background-size: 137px 120px;
-        background-size: 137px 120px;
-    }
-    section#obstacles .obstacle-detail li.obstacle-hamster-wheel .obstacle-title { margin-bottom: -1em }
-    section#obstacles .obstacle-detail li.obstacle-down-hatch img {
-        width: 80%;
-        margin-left: 1.8em;
-    }
-    section#obstacles .obstacle-detail li.obstacle-hamster-wheel,
-    section#obstacles .obstacle-detail li.obstacle-pick-it,
-    section#obstacles .obstacle-detail li.obstacle-wringer { padding-top: 1.4em }
-    section#obstacles .obstacle-detail li.obstacle-wringer img { margin-left: 1.6em }
-    section#prizes ul.prize-options .figure img { max-width: 70% }
-    section#prizes ul.prize-options .figure.prize-keyboard { margin-top: 0 }
-    section#prizes ul.prize-options .figure.prize-tv { margin-top: -3.9em }
-    section#prizes ul.prize-options .figcaption {
-        margin-top: .8em;
-        font-size: .7em;
-    }
-    section#contestant form.contestant-form,
-    section#contestant .count-down {
-        float: none;
-        width: 100%;
-        margin-bottom: 2.2em;
-    }
-    section#contestant form.contestant-form { min-height: 450px }
-    section#contestant form.contestant-form input {
-        padding: 10px 10px;
-        font-size: .8em;
-        margin-bottom: .8em;
-    }
-    section#contestant form.contestant-form .select-arrow {
-        width: 40px;
-        background-position: center 16px;
-        padding: 6px 0 14px;
-    }
-    section#contestant form.contestant-form .select-arrow:hover { background-position: center 18px }
-    section#contestant form.contestant-form .sb-dropdown { top: 2.9em }
-    section#contestant form.contestant-form button img {
-        width: 137px;
-        min-height: 120px;
-        margin-left: -68.5px;
-    }
-    section#contestant form.contestant-form button em {
-        font-size: 110%;
-        padding-top: 2.5em;
-    }
-    section#contestant form.contestant-form button:hover em {
-        font-size: 1.3em;
-        padding-top: 2em;
-    }
-    section#contestant .count-down .counter { font-size: 8.2em }
-    footer#main-footer { padding: 0 1em 1em }
-    footer#main-footer .left,
-    footer#main-footer .right,
-    footer#main-footer address.left,
-    footer#main-footer address.right {
-        float: none;
-        width: 100%;
-        padding: 0;
-        text-align: center;
-        margin-bottom: .8em;
-    }
-    footer#main-footer .right { margin-bottom: 1.9em }
-    footer#main-footer p,
-    footer#main-footer p.legal { font-size: .75em }
-    footer#main-footer address { font-size: .8em }
-}
-
-@media screen and (max-width: 390px) { 
-    header#main-header {
-        padding: 6px 0;
-        margin-top: -4px;
-    }
-    #main-nav ul li {
-        font-size: .65em;
-        margin: 0 1.5%;
-    }
-    section#home .content { padding-top: 3.1em }
-    section#home h1 img {
-        float: none;
-        max-width: 90%;
-        margin: 0;
-    }
-    section#home .content .tagline {
-        font-size: 60%;
-        width: 80%;
-        margin: 0 auto;
-        float: none;
-    }
-    section#home p {
-        padding-top: .5em;
-        font-size: 140%;
-    }
-    section#obstacles { padding-bottom: 0 }
-    section#obstacles header { margin-bottom: 2.25em }
-    section#obstacles .obstacle-options .figure,
-    section#obstacles .obstacle-options .figure.even {
-        width: 15.22988%;
-        /* 53 / 348 */
-        margin-right: 1.15%;
-        /* 6 / 348 */
-        min-height: 50px;
-    }
-    section#obstacles .obstacle-options .figure.last { margin-right: 0 }
-    section#obstacles .obstacle-detail {
-        top: 5em;
-        height: 320px;
-    }
-    section#obstacles .obstacle-detail li .obstacle-title {
-        margin-bottom: 2.9em;
-        font-size: 46%;
-    }
-    section#obstacles .obstacle-detail li.obstacle-hamster-wheel,
-    section#obstacles .obstacle-detail li.obstacle-pick-it,
-    section#obstacles .obstacle-detail li.obstacle-wringer { padding-top: 2.1em }
-    section#prizes ul.prize-options .figure {
-        float: none;
-        width: 100%;
-        margin: 0 auto 2em;
-    }
-    section#prizes ul.prize-options .figure.prize-tv { margin-top: 1em }
-    section#contestant .count-down img { max-width: 87% }
-    section#contestant .count-down .counter { font-size: 5.4em }
-}
-/* @end */
-
-/* @group Print Styles
---------------------------------------------- */
-@media print { 
-    * {
-        background: transparent !important;
-        color: black !important;
-        text-shadow: none !important;
-        filter: none !important;
-        -ms-filter: none !important;
-    }
-    a,
-    a:visited {
-        color: #444 !important;
-        text-decoration: underline;
-    }
-    a[href]:after { content: " (" attr(href) ")" }
-    abbr[title]:after { content: " (" attr(title) ")" }
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after { content: "" }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-    thead { display: table-header-group }
-    tr,
-    img { page-break-inside: avoid }
-    img { max-width: 100% !important }
-}
 /* @end */

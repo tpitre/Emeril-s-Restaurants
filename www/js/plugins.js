@@ -1,5 +1,5 @@
 /* ===========================================
-   CSSOff JS Plugins
+   Emeril's Restaruants JS Plugins
    =========================================== */
    
 /*	
@@ -98,3 +98,7 @@ The IE font-face ClearType fix plugin is dual licensed under the [MIT](http://ww
 There is one configuration setting to be changed below if you have the PNG image in different location from this file.
 */
 (function($){$.fn.ieffembedfix=function(){var pngimgurl="../img/hIEfix.png";return this.each(function(){if(jQuery.support.objectAll==false){$(this).css({filter:'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + pngimgurl + ",sizingMethod=crop',zoom:'1'});}});}})(jQuery);
+
+window.log = function f(){ log.history = log.history || []; log.history.push(arguments); if(this.console) { var args = arguments, newarr; args.callee = args.callee.caller; newarr = [].slice.call(args); if (typeof console.log === 'object') log.apply.call(console.log, console, newarr); else console.log.apply(console, newarr);}};
+(function(a){function b(){}for(var c="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(","),d;!!(d=c.pop());){a[d]=a[d]||b;}})
+(function(){try{console.log();return window.console;}catch(a){return (window.console={});}}());
