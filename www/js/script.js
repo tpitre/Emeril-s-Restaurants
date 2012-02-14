@@ -43,7 +43,7 @@ var er = {
 $(function(){
 	
 	// init the functions
-	bf.addPlaceHolder();		
+	er.addPlaceHolder();		
 	
 });
 		

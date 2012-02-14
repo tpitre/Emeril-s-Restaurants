@@ -12,9 +12,16 @@
 // LESS Variables
 @main-font-color: #3E4549;
 @main-link-color: #069;
+@main-bg-color: #F5F6ED;
 @main-transition: all .3s ease-in-out;
+@body-font: "proxima-nova-1","proxima-nova-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@header-font: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-
+.box-shadow-6 {
+  -webkit-box-shadow: 0 0 6px rgba(0,0,0,.6);
+  -moz-box-shadow: 0 0 6px rgba(0,0,0,.6);
+  box-shadow: 0 0 6px rgba(0,0,0,.6);
+}
 .trans {
   -webkit-transition: @main-transition;
   -moz-transition: @main-transition;
@@ -26,8 +33,10 @@
 /* @group Base Styles
 ---------------------------------------------- */
 body {
-    font: normal 100% "proxima-nova-1","proxima-nova-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: normal 100% @body-font;
     color: @main-font-color;
+    background: @main-bg-color url(../../img/bg-body.gif) repeat top left;
+    background: 
     padding: 0;
     margin: 0;
 }
@@ -45,7 +54,7 @@ a:active {
 }
 h1,
 h2 {
-    font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: @header-font;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: -1px;
@@ -64,20 +73,110 @@ h3 {
 /* @group Main Styles 
 ---------------------------------------------- */
 
-@base: #f938ab;
+/* @group Top Navigation */
 
-.box-shadow(@style, @c) when (iscolor(@c)) {
-  box-shadow:         @style @c;
-  -webkit-box-shadow: @style @c;
-  -moz-box-shadow:    @style @c;
-}
-.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
-  .box-shadow(@style, rgba(0, 0, 0, @alpha));
-}
-.box { 
-  color: saturate(@base, 5%);
-  border-color: lighten(@base, 30%);
-  div { .box-shadow(0 0 5px, 30%) }
+#main-nav {
+  width: 100%;
+  text-align: center;
+  background: transparent url(../../img/bg-global-nav.jpg) repeat-x top left;
+  border-bottom: 1px solid #fff;
+  .box-shadow-6;
+  ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  .mainnavul {
+    z-index: 10;
+    position: relative;
+  }
+  li {
+    margin: 0;
+    padding: 0 16px;
+    font: 16px/33px Georgia, "Times New Roman", Times, serif;
+    text-transform: uppercase;
+    display: inline;
+    position: relative;
+  }
+  li a:link,
+  li a:visited {
+    background-image: url(../../img/pointer.png);
+    background-position: center 40px;
+    background-repeat: no-repeat;
+    padding: 8px 0;
+    color: #FFF;
+  }
+  li a:hover,
+  li a.active,
+  li a.active-hover {
+    background-position: center 20px;
+    color: #F0EBD6;
+  }
+  .dropdown {
+    background-color: #fff;
+    padding: 2px 8px 3px;
+    position: absolute;
+    top: 27px;
+    left: 12px;
+    opacity: 0;
+    border: 1px solid #ccc;
+    border-top: 0;
+    z-index: 100;
+    .trans 
+  }
+  li:hover .dropdown {
+    opacity: 1;
+  }
+  .dropdown ul {
+    margin: 4px 0 5px;
+    padding: 0;
+  }
+  .dropdown h2 {
+    border-bottom: #999 1px solid;
+    font-size: 1.4em;
+    text-align: left;
+    margin: 2px;
+  }
+  .dropdown li {
+    padding: 0;
+    margin: 0;
+    display: block;
+    list-style-type: disc;
+    color: @main-link-color;
+  }
+  .dropdown li a {
+    padding: 3px 5px;
+    color: #600;
+    display: block;
+    background-image: none;
+    font: .75em @body-font;
+    text-align: left;
+    text-transform: none;
+  }
+  .dropdown li a:hover,
+  .dropdown li a:active {
+    color: #428649;
+    background-color: @main-bg-color;
+  }
+  .rest-nav {
+    width: 220px;
+  }
+  .blog-nav {
+    width: 140px;
+  }
+  .tv-nav {
+    width: 130px;
+  }
+  .em-nav {
+    width: 186px;
+  }
+  .news-nav {
+    width: 210px;
+  }
+  .shop-nav {
+    left: -110px;
+    width: 200px;
+  }
 }
 
 

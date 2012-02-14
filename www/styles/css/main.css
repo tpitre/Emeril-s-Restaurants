@@ -7,6 +7,11 @@
    =========================================== */
 /* CSS Imports
 ---------------------------------------------- */
+.box-shadow-6 {
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
 .trans {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -19,7 +24,8 @@
 body {
   font: normal 100% "proxima-nova-1", "proxima-nova-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3e4549;
-  padding: 0;
+  background: #f5f6ed url(../../img/bg-body.gif) repeat top left;
+  background: padding: 0;
   margin: 0;
 }
 a, a:visited {
@@ -57,14 +63,111 @@ h3 {
 /* @end */
 /* @group Main Styles 
 ---------------------------------------------- */
-.box {
-  color: #fe33ac;
-  border-color: #fdcdea;
+/* @group Top Navigation */
+#main-nav {
+  width: 100%;
+  text-align: center;
+  background: transparent url(../../img/bg-global-nav.jpg) repeat-x top left;
+  border-bottom: 1px solid #fff;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
-.box div {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+#main-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#main-nav .mainnavul {
+  z-index: 10;
+  position: relative;
+}
+#main-nav li {
+  margin: 0;
+  padding: 0 16px;
+  font: 16px/33px Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  display: inline;
+  position: relative;
+}
+#main-nav li a:link, #main-nav li a:visited {
+  background-image: url(../../img/pointer.png);
+  background-position: center 40px;
+  background-repeat: no-repeat;
+  padding: 8px 0;
+  color: #FFF;
+}
+#main-nav li a:hover, #main-nav li a.active, #main-nav li a.active-hover {
+  background-position: center 20px;
+  color: #F0EBD6;
+}
+#main-nav .dropdown {
+  background-color: #fff;
+  padding: 2px 8px 3px;
+  position: absolute;
+  top: 27px;
+  left: 12px;
+  opacity: 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  z-index: 100;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#main-nav li:hover .dropdown {
+  opacity: 1;
+}
+#main-nav .dropdown ul {
+  margin: 4px 0 5px;
+  padding: 0;
+}
+#main-nav .dropdown h2 {
+  border-bottom: #999 1px solid;
+  font-size: 1.4em;
+  text-align: left;
+  margin: 2px;
+}
+#main-nav .dropdown li {
+  padding: 0;
+  margin: 0;
+  display: block;
+  list-style-type: disc;
+  color: #006699;
+}
+#main-nav .dropdown li a {
+  padding: 3px 5px;
+  color: #600;
+  display: block;
+  background-image: none;
+  font: 0.75em "proxima-nova-1", "proxima-nova-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: left;
+  text-transform: none;
+}
+#main-nav .dropdown li a:hover, #main-nav .dropdown li a:active {
+  color: #428649;
+  background-color: #f5f6ed;
+}
+#main-nav .rest-nav {
+  width: 220px;
+}
+#main-nav .blog-nav {
+  width: 140px;
+}
+#main-nav .tv-nav {
+  width: 130px;
+}
+#main-nav .em-nav {
+  width: 186px;
+}
+#main-nav .news-nav {
+  width: 210px;
+}
+#main-nav .shop-nav {
+  left: -110px;
+  width: 200px;
 }
 /* @end */
 /* @group Media Queries
