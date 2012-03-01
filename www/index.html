@@ -46,7 +46,7 @@
 				<nav id="main-nav" role="navigation">
 					<ul class="mainnavul">
             <li><a href="/recipes">Recipes</a></li>
-            <li><a class="mainlink" href="/restaurants">Restaurants</a>
+            <li class="dropit"><a class="mainlink" href="/restaurants">Restaurants</a>
               <div class="rest-nav dropdown">
                 <h2>New Orleans</h2>
                 <ul>
@@ -78,7 +78,7 @@
                 </ul>
               </div>
             </li>
-            <li><a class="mainlink" href="/cooking-blog">Cooking Blog</a>
+            <li class="dropit"><a class="mainlink" href="/cooking-blog">Cooking Blog</a>
               <div class="blog-nav dropdown">
                 <ul>
                   <li><a href="http://www.emerils.com/cooking-blog/category/cool-stuff/">Cool Stuff</a> </li>
@@ -94,7 +94,7 @@
               </div>
             </li>           
             <li><a href="/multimedia">Video</a></li> 
-            <li><a class="mainlink" href="/emerilology">About Emeril</a>
+            <li class="dropit"><a class="mainlink" href="/emerilology">About Emeril</a>
               <div class="em-nav dropdown">
                 <ul>
                   <li><a href="/emerilology/bio">Emeril's Biography</a> </li>
@@ -106,7 +106,7 @@
                 </ul>
               </div>
             </li>
-            <li><a class="mainlink" href="/newsroom">Newsroom</a>
+            <li class="dropit"><a class="mainlink" href="/newsroom">Newsroom</a>
               <div class="news-nav dropdown">
                 <ul>
                   <li><a href="http://www.emerils.com/newsroom/category/charitable-events/">Charitable Events</a> </li>
@@ -122,7 +122,7 @@
                 </ul>
               </div>
             </li>
-            <li><a class="mainlink" href="http://www.emerilstore.com/">Shop</a>
+            <li class="dropit"><a class="mainlink" href="http://www.emerilstore.com/">Shop</a>
               <div class="shop-nav dropdown">
                 <ul>
                   <li><a href="http://www.emerilstore.com/products.asp?dept=1222">Products Recently Aired on HSN!</a></li>                  
@@ -146,21 +146,23 @@
 				</nav> <!-- /#main-nav -->
 			</header> <!-- /#main-header -->
 			
-      <header id="sub-header">
-        <a href="" class="er-logo left"></a>
-        <div class="city-filter">
-          <span>Filter by City:</span>          
-          <ul>
-            <li><a href="">New Orleans</a></li>
-            <li><a href="">Las Vegas</a></li>
-            <li><a href="">Orlando</a></li>
-            <li><a href="">Bethlehem</a></li>
-            <li><a href="">Charlotte</a></li>
-          </ul>
-        </div>
-      </header> <!-- /#sub-header -->
-
       <div id="main-content" role="main">
+       
+        <a href="" class="er-logo left"><img src="img/emerils-restaurants.png" alt=""></a>
+        
+        <header id="sub-header">          
+          <div class="city-filter">
+            <span>Filter by City:</span>          
+            <ul>
+              <li class="first"><a href="">New Orleans</a></li>
+              <li><a href="">Las Vegas</a></li>
+              <li><a href="">Orlando</a></li>
+              <li><a href="">Bethlehem</a></li>
+              <li class="last"><a href="">Charlotte</a></li>
+            </ul>
+          </div>
+        </header> <!-- /#sub-header -->
+      
         <section class="rest-cities city-nola">
           <h1>New Orleans, Louisiana</h1>
           <ul>
@@ -216,33 +218,37 @@
       </div> <!-- /#main-content -->      
       
 			<footer id="main-footer" role="contentinfo">
-				<div class="content">
-          <div class="social left">
-            <h3 class="icon-twitter">Twitter</h3>
-            <ul>
-              <li><a target="_blank" href="http://twitter.com/emeril">Follow Emeril</a></li>
-              <li><a target="_blank" href="http://twitter.com/emerilseats">Follow Emeril's Restaurants</a></li>
-            </ul>
-            <h3 class="icon-fb">Facebook</h3>
-            <ul>
-              <li><a target="_blank" href="http://www.facebook.com/Emeril">Emeril Lagasse Official Page</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/EmerilsNewOrleans">Emeril's New Orleans</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/EmerilsDelmonico">Emeril's Delmonico</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/NOLARestaurant">NOLA</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/EmerilsOrlando">Emeril's Orlando</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/EmerilsTchoupChop">Emeril's Tchoup Chop</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/DelmonicoSteakhouse">Delmonico Steakhouse</a></li>       			
-              <li><a target="_blank" href="http://www.facebook.com/EmerilsNewOrleansFishHouse">Emeril's New Orleans Fish House</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/Table10">Table 10</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/LagassesStadium">Lagasse's Stadium</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/pages/Emerils-Chop-House/124690197604819">Emeril's Chop House</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/pages/Burgers-and-More-by-Emeril/166565113390846">Burgers and More</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/pages/Emerils-Italian-Table/184569538258544">Emeril's Italian Table</a></li>
-              <li><a target="_blank" href="http://www.facebook.com/e2EmerilsEatery">e2 Emeril's Eatery</a></li>
-            </ul>
+				<div class="main-footer-inner">
+          <div class="social">
+            <div class="twitter-all">
+              <h3 class="icon-twitter">Twitter</h3>
+              <ul>
+                <li><a target="_blank" href="http://twitter.com/emeril">Follow Emeril</a></li>
+                <li><a target="_blank" href="http://twitter.com/emerilseats">Follow Emeril's Restaurants</a></li>
+              </ul>
+            </div>
+            <div class="fb-all">
+              <h3 class="icon-fb">Facebook</h3>
+              <ul>
+                <li><a target="_blank" href="http://www.facebook.com/Emeril">Emeril Lagasse Official Page</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/EmerilsNewOrleans">Emeril's New Orleans</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/EmerilsDelmonico">Emeril's Delmonico</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/NOLARestaurant">NOLA</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/EmerilsOrlando">Emeril's Orlando</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/EmerilsTchoupChop">Emeril's Tchoup Chop</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/DelmonicoSteakhouse">Delmonico Steakhouse</a></li>       			
+                <li><a target="_blank" href="http://www.facebook.com/EmerilsNewOrleansFishHouse">Emeril's New Orleans Fish House</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/Table10">Table 10</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/LagassesStadium">Lagasse's Stadium</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/pages/Emerils-Chop-House/124690197604819">Emeril's Chop House</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/pages/Burgers-and-More-by-Emeril/166565113390846">Burgers and More</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/pages/Emerils-Italian-Table/184569538258544">Emeril's Italian Table</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/e2EmerilsEatery">e2 Emeril's Eatery</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="signup right">
-            <strong>Signup up for the egram</strong>
+          <div class="signup">
+            <h3>Signup up for the egram</h3>
             <form name="ccoptin" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post">
               <input type="hidden" name="llr" value="ev9v9mcab">
               <input type="hidden" name="m" value="1102089743012">
@@ -251,10 +257,13 @@
               <button>Go</button>
             </form>
           </div>
-					<div class="footer-btm clear">
-            <p class="legal">&copy; Copyright 2012 Emeril's Homebase | All Rights Reserved | <a href="">Terms of Agreement</a> | <a href="">Privacy Policy</a></p> <!-- /.legal -->
+        </div> <!-- /.main-footer-inner --> 
+        <div class="footer-btm">
+          <div class="footer-btm-inner">
+            <p class="legal">&copy; Copyright 2012 Emeril's Homebase -- All Rights Reserved</p>
             <a href="" class="dotcom-logo"><img src="img/emerilsdotcom.png" alt=""></a>
-        </div> <!-- /.content -->
+          </div>
+        </div> <!-- /.footer-btm -->
 			</footer> <!-- /#main-footer -->		
 			
 		</div> <!-- /#main-container -->
