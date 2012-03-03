@@ -9,7 +9,8 @@
 @import url('fonts.css');
 
 
-// LESS Variables
+/* @group LESS
+---------------------------------------------- */
 @main-font-color: #3E4549;
 @main-link-color: #069;
 @main-bg-color: #F5F6ED;
@@ -65,6 +66,7 @@
     list-style: none;
   }
 }
+/* @end LESS */
 
 /* @group Base Styles
 ---------------------------------------------- */
@@ -96,6 +98,7 @@ h3 {
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: -1px;
+    //text-shadow: 1px 1px 1px #ffffff;
 }
 h1 {
     font-size: 2.5em; /* 40 / 16 */
@@ -252,45 +255,51 @@ button {
 /* @group Main Content
 --------------------------------------------- */
 
+#main-container {
+	background: #F3ECE4 url('../../img/temp-img.jpg') no-repeat center 30px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 #main-content {  
   .center-content;
   margin-top: 26px;
-  #sub-header {
+  #city-filter {
     float: right;
     background-color: rgba(255,255,255,.5);
     .rounded;
     margin-bottom: 60px;
-    width: 66.03773%; /* 700 / 1060 */
-    .city-filter {
-      padding: 10px 16px;
-      font-weight: 600;
-      font-size: 1.2em;
-      overflow: hidden;
-      span {
-        color: @burgundy;
+    width: 63.01886%; /* (700 - (16 * 2)) / 1060 */    
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 1.2em;
+    overflow: hidden;
+    span {
+      color: @burgundy;
+      float: left;
+      margin-right: 2%;
+    }
+    ul {
+      .no-indent;
+      li {
         float: left;
-        margin-right: 2%;
-      }
-      ul {
-        .no-indent;
-        li {
-          float: left;
-          border-right: 1px solid #ccc;
-          &.last {
-            border-right: none;          
-          }
-          a {
-            display: block;
-            padding: 0 8%;
-          }
-          &.first a {
-            padding-left: 0;
-          }
-          &.last a {
-            padding-right: 0;
-          }
+        border-right: 1px solid #ccc;
+        &.last {
+          border-right: none;          
         }
-      }
+        a {
+          display: block;
+          padding: 0 8%;
+        }
+        &.first a {
+          padding-left: 0;
+        }
+        &.last a {
+          padding-right: 0;
+        }
+      }      
     }
   }
   .rest-cities {
@@ -332,7 +341,44 @@ button {
         }
       }
     }
-  }
+  }  
+}
+
+#sub-head {
+	background-color: rgba(255,255,255,.3);	
+	.sub-head-inner {
+		overflow: hidden;
+		.center-content;
+		.er-logo {
+			margin: 9px 0 8px;
+		}
+		#sub-nav {
+			float: right;
+			ul {
+				.no-indent;
+				li {
+				  float: left;
+				  border-right: 1px solid rgba(255,255,255,.4);
+				  font-family: @header-font;
+				  font-size: 1.5em;				  
+				  text-transform: uppercase;
+				  &.first {
+				    border-left: 1px solid rgba(255,255,255,.4);          
+				  }
+				  a {
+				    display: block;
+				    text-align: center;
+				    padding: 18px;
+				    color: #fff;				  
+					  &:hover {
+					  	color: @main-link-color;
+					  	background-color: #fff;
+					  }
+					}
+				}
+			}
+		}
+	}
 }
 
 /* @end Main Content */
@@ -343,6 +389,7 @@ button {
 #main-footer {
   overflow: hidden;
   color: white;
+  clear: both;
   background: #660000 url(../../img/bg-brick.gif) repeat;
   border-top: 1px solid #fff;
   .box-shadow-6;

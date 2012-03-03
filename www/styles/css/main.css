@@ -7,6 +7,8 @@
    =========================================== */
 /* CSS Imports
 ---------------------------------------------- */
+/* @group LESS
+---------------------------------------------- */
 .box-shadow-1 {
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -51,6 +53,7 @@
 .no-indent li {
   list-style: none;
 }
+/* @end LESS */
 /* @group Base Styles
 ---------------------------------------------- */
 body {
@@ -252,56 +255,60 @@ button {
 /* @end Top Navigation*/
 /* @group Main Content
 --------------------------------------------- */
+#main-container {
+  background: #f3ece4 url('../../img/temp-img.jpg') no-repeat center 30px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 #main-content {
   width: 100%;
   max-width: 1060px;
   margin: 0 auto;
   margin-top: 26px;
 }
-#main-content #sub-header {
+#main-content #city-filter {
   float: right;
   background-color: rgba(255, 255, 255, 0.5);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin-bottom: 60px;
-  width: 66.03773%;
-  /* 700 / 1060 */
-
-}
-#main-content #sub-header .city-filter {
+  width: 63.01886%;
+  /* (700 - (16 * 2)) / 1060 */
   padding: 10px 16px;
   font-weight: 600;
   font-size: 1.2em;
   overflow: hidden;
 }
-#main-content #sub-header .city-filter span {
+#main-content #city-filter span {
   color: #990000;
   float: left;
   margin-right: 2%;
 }
-#main-content #sub-header .city-filter ul {
+#main-content #city-filter ul {
   margin: 0;
   padding: 0;
 }
-#main-content #sub-header .city-filter ul li {
+#main-content #city-filter ul li {
   list-style: none;
 }
-#main-content #sub-header .city-filter ul li {
+#main-content #city-filter ul li {
   float: left;
   border-right: 1px solid #ccc;
 }
-#main-content #sub-header .city-filter ul li.last {
+#main-content #city-filter ul li.last {
   border-right: none;
 }
-#main-content #sub-header .city-filter ul li a {
+#main-content #city-filter ul li a {
   display: block;
   padding: 0 8%;
 }
-#main-content #sub-header .city-filter ul li.first a {
+#main-content #city-filter ul li.first a {
   padding-left: 0;
 }
-#main-content #sub-header .city-filter ul li.last a {
+#main-content #city-filter ul li.last a {
   padding-right: 0;
 }
 #main-content .rest-cities {
@@ -362,12 +369,55 @@ button {
 #main-content .rest-cities ul li h2 {
   margin: 0;
 }
+#sub-head {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#sub-head .sub-head-inner {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+#sub-head .sub-head-inner .er-logo {
+  margin: 9px 0 8px;
+}
+#sub-head .sub-head-inner #sub-nav {
+  float: right;
+}
+#sub-head .sub-head-inner #sub-nav ul {
+  margin: 0;
+  padding: 0;
+}
+#sub-head .sub-head-inner #sub-nav ul li {
+  list-style: none;
+}
+#sub-head .sub-head-inner #sub-nav ul li {
+  float: left;
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  font-family: "proxima-nova-extra-condensed-1", "proxima-nova-extra-condensed-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+#sub-head .sub-head-inner #sub-nav ul li.first {
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+#sub-head .sub-head-inner #sub-nav ul li a {
+  display: block;
+  text-align: center;
+  padding: 18px;
+  color: #fff;
+}
+#sub-head .sub-head-inner #sub-nav ul li a:hover {
+  color: #006699;
+  background-color: #fff;
+}
 /* @end Main Content */
 /* @group Footer Styles
 --------------------------------------------- */
 #main-footer {
   overflow: hidden;
   color: white;
+  clear: both;
   background: #660000 url(../../img/bg-brick.gif) repeat;
   border-top: 1px solid #fff;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
