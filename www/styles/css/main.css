@@ -370,6 +370,7 @@ a.see-more:hover {
 #main-content #city-filter ul li a {
   display: block;
   padding: 0 8%;
+  white-space: nowrap;
 }
 #main-content #city-filter ul li.first a {
   padding-left: 0;
