@@ -3,6 +3,15 @@
    Author: Terrance Pitre
    =========================================== */
 
+#widths {
+	background-color: white;
+	width: 100px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+}
+
 /* CSS Imports
 ---------------------------------------------- */
 @import url('boilerplate.css');
@@ -339,6 +348,7 @@ a.see-more:hover {
       li {
         float: left;
         border-right: 1px solid #ccc;
+        white-space: nowrap;
         &.last {
           border-right: none;          
         }
@@ -417,7 +427,7 @@ a.see-more:hover {
 }
 
 #sub-head {
-	background-color: rgba(255,255,255,.3);
+	background-color: rgba(0,0,0,.6);
 	position: fixed;
 	z-index: 2;
 	width: 100%;
@@ -428,14 +438,17 @@ a.see-more:hover {
 		.center-content;		
 		.er-logo {
 			margin: 9px 0 8px;
+			display: none;
 			img {
 				.trans;
 			}
 		}		
-		#sub-nav {
-			float: right;
+		#sub-nav {			
 			ul {
 				.no-indent;
+				margin: 0 auto;
+				overflow: hidden;
+				width: 608px;
 				li {
 				  float: left;
 				  border-right: 1px solid rgba(255,255,255,.4);
@@ -448,7 +461,7 @@ a.see-more:hover {
 				  a {
 				    display: block;
 				    text-align: center;
-				    padding: 18px;
+				    padding: 18px 18px 16px;
 				    color: #fff;				  
 					  &:hover {
 					  	color: @main-link-color;
@@ -709,9 +722,11 @@ a.see-more:hover {
 }
 
 .rest-home #main-content .follow-us {
-	width: 32.07547%; /* 340 / 1060 */
-	font-size: 100%;
+	width: 32.07547%; /* 340 / 1060 */	
 	margin-bottom: 0;
+	ul li {
+		font-size: 100%;
+	}
 }
 
 .rest-home #main-content #sidebar {
@@ -949,8 +964,13 @@ a.see-more:hover {
 
 /* @group Media Queries
 --------------------------------------------- */
-@media screen and (min-width: 501px) and (max-width: 940px) { 
+
+@media only all and (max-width : 1024px) {
 
 }
+
+
+
+
 
 /* @end */

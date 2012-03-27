@@ -5,6 +5,14 @@
    Main styles for Emeril's Restaurants
    Author: Terrance Pitre
    =========================================== */
+#widths {
+  background-color: white;
+  width: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
 /* CSS Imports
 ---------------------------------------------- */
 /* @group LESS
@@ -363,6 +371,7 @@ a.see-more:hover {
 #main-content #city-filter ul li {
   float: left;
   border-right: 1px solid #ccc;
+  white-space: nowrap;
 }
 #main-content #city-filter ul li.last {
   border-right: none;
@@ -456,7 +465,7 @@ a.see-more:hover {
   margin-top: 60px;
 }
 #sub-head {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -475,6 +484,7 @@ a.see-more:hover {
 }
 #sub-head .sub-head-inner .er-logo {
   margin: 9px 0 8px;
+  display: none;
 }
 #sub-head .sub-head-inner .er-logo img {
   -webkit-transition: all 0.3s ease-in-out;
@@ -483,12 +493,12 @@ a.see-more:hover {
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-#sub-head .sub-head-inner #sub-nav {
-  float: right;
-}
 #sub-head .sub-head-inner #sub-nav ul {
   margin: 0;
   padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 608px;
 }
 #sub-head .sub-head-inner #sub-nav ul li {
   list-style: none;
@@ -506,7 +516,7 @@ a.see-more:hover {
 #sub-head .sub-head-inner #sub-nav ul li a {
   display: block;
   text-align: center;
-  padding: 18px;
+  padding: 18px 18px 16px;
   color: #fff;
 }
 #sub-head .sub-head-inner #sub-nav ul li a:hover {
@@ -799,9 +809,10 @@ a.see-more:hover {
 .rest-home #main-content .follow-us {
   width: 32.07547%;
   /* 340 / 1060 */
-
-  font-size: 100%;
   margin-bottom: 0;
+}
+.rest-home #main-content .follow-us ul li {
+  font-size: 100%;
 }
 .rest-home #main-content #sidebar {
   clear: none;
@@ -1066,7 +1077,7 @@ a.see-more:hover {
 /* @end Main Styles */
 /* @group Media Queries
 --------------------------------------------- */
-@media screen and (min-width: 501px) and (max-width: 940px) {
+@media only all and (max-width: 1024px) {
   
 }
 /* @end */

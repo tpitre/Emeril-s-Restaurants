@@ -13,9 +13,9 @@ var er = {
 				$subHead = $('#sub-head');
 				
 		// color the main nav on scroll
-		$restWelcome.waypoint(function() {
-			$subHead.toggleClass('active');
-		});
+//		$restWelcome.waypoint(function() {
+//			$subHead.toggleClass('active');
+//		});
 	},
 	
 	toggleGallery: function(){
@@ -189,8 +189,67 @@ $(function(){
 	// init the functions
 	er.addPlaceHolder();
 	er.toggleGallery();
-	er.transformNav();
+	//er.transformNav();
 	er.initSlideshow();
 				
 });
+
+
+
+/* remove this once live */
+/*
+  <div id="viewportwidth"></div>
+  <div id="viewportheight"></div>
+  <div id="resolutionwidth"></div>
+  <div id="resolutionheight"></div>
+*/
+function getViewportWidth()
+{
+       if (window.innerWidth)
+       {
+               return window.innerWidth;
+       }
+       else if (document.body && document.body.offsetWidth)
+       {
+               return document.body.offsetWidth;
+       }
+       else
+       {
+               return 0;
+       }
+}
+
+function getViewportHeight()
+{
+       if (window.innerHeight)
+       {
+               return window.innerHeight;
+       }
+       else if (document.body && document.body.offsetHeight)
+       {
+               return document.body.offsetHeight;
+       }
+       else
+       {
+               return 0;
+       }
+}
+
+var tellMeTheSizes=function()
+{
+       document.getElementById("viewportwidth").innerHTML = "VW: " + getViewportWidth() + "px";
+       document.getElementById("viewportheight").innerHTML = "viewport height " + getViewportHeight() + "px";
+       document.getElementById("resolutionwidth").innerHTML = "screen width " + screen.width + "px";
+       document.getElementById("resolutionheight").innerHTML = "screen height " + screen.height + "px";
+}
+
+window.onload=function()
+{
+       tellMeTheSizes();
+}
+
+window.onresize=function()
+{
+       tellMeTheSizes();
+}
 		
