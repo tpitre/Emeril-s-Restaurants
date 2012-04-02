@@ -5,7 +5,7 @@
 
 var er = {
 	
-	// cache static elements used on load				
+	// cache static elements used on load
 	bg:				$('.bg'),
 	
 	transformNav: function(){
@@ -27,35 +27,31 @@ var er = {
 				paddingTop: 560
 			}, 700, 'easeInOutQuint');
 			$togGallery.addClass('down');
-		}
+		};
 		
 		var down = function(){
 			$('#main-content').animate({
-				paddingTop: 110
+				paddingTop: 136
 			}, 700, 'easeInOutQuint');
 			$togGallery.removeClass('down');
-		}
+		};
 		
 		$togGallery.toggle(up, down);
 	},
 	
 	initSlideshow: function(){
-		if ($('body').hasClass('show-gallery')) {
+		if ($('body').hasClass('show-gallerys')) {
 			// Speed of the automatic slideshow
 			var slideshowSpeed = 6000;
 			
 			// Variable to store the images we need to set as background
 			// which also includes some text and url's.
 			var photos = [ {
-					"image" : "img2.jpg",
+					"image" : "em-img1.jpg"
 				}, {
-					"image" : "img7.jpg",
+					"image" : "em-img2.jpg"
 				}, {
-					"image" : "img1.jpg",
-				}, {
-					"image" : "img3.jpg",
-				}, {
-					"image" : "img6.jpg",
+					"image" : "em-img3.jpg"
 				}
 			];
 			
@@ -96,20 +92,20 @@ var er = {
 			
 			var navigate = function(direction) {
 				
-				// Check if no animation is running. If it is, prevent the action			
+				// Check if no animation is running. If it is, prevent the action
 				if(animating) {
 					return;
 				}
 				
 				// Check which current image we need to show
-				if(direction == "next") {
+				if(direction === "next") {
 					currentImg++;
-					if(currentImg == photos.length + 1) {
+					if(currentImg === photos.length + 1) {
 						currentImg = 1;
 					}
 				} else {
 					currentImg--;
-					if(currentImg == 0) {
+					if(currentImg === 0) {
 						currentImg = photos.length;
 					}
 				}
@@ -159,13 +155,13 @@ var er = {
 		
 			$('[placeholder]').focus(function(){
 				var input = $(this);
-				if (input.val() == input.attr('placeholder')){
+				if (input.val() === input.attr('placeholder')){
 					input.val('');
 					input.removeClass('placeholder');
 				}
 			}).blur(function(){
 				var input = $(this);
-				if (input.val() == '' || input.val() == input.attr('placeholder')) {
+				if (input.val() === '' || input.val() === input.attr('placeholder')) {
 					input.addClass('placeholder');
 					input.val(input.attr('placeholder'));
 				}
@@ -173,16 +169,16 @@ var er = {
 			$('[placeholder]').parents('form').submit(function(){
 				$(this).find('[placeholder]').each(function() {
 					var input = $(this);
-					if (input.val() == input.attr('placeholder')){
+					if (input.val() === input.attr('placeholder')){
 						input.val('');
 					}
-				})
-			});	
+				});
+			});
 		}
 	
 	}
 	
-}
+};
 
 $(function(){
 	
@@ -238,18 +234,18 @@ function getViewportHeight()
 var tellMeTheSizes=function()
 {
        document.getElementById("viewportwidth").innerHTML = "VW: " + getViewportWidth() + "px";
-       document.getElementById("viewportheight").innerHTML = "viewport height " + getViewportHeight() + "px";
-       document.getElementById("resolutionwidth").innerHTML = "screen width " + screen.width + "px";
-       document.getElementById("resolutionheight").innerHTML = "screen height " + screen.height + "px";
-}
+       //document.getElementById("viewportheight").innerHTML = "viewport height " + getViewportHeight() + "px";
+       //document.getElementById("resolutionwidth").innerHTML = "screen width " + screen.width + "px";
+       //document.getElementById("resolutionheight").innerHTML = "screen height " + screen.height + "px";
+};
 
 window.onload=function()
 {
        tellMeTheSizes();
-}
+};
 
 window.onresize=function()
 {
        tellMeTheSizes();
-}
+};
 		

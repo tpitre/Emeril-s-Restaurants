@@ -67,9 +67,10 @@
   transition: @main-transition;
 }
 .center-content {
-  width: 100%;
+  width: 96%;
   max-width: 1060px;
   margin: 0 auto;
+  padding: 0 2%;
 }
 .no-indent {  
   margin: 0;
@@ -205,17 +206,13 @@ a.see-more:hover {
 
 #main-nav {
   width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 5;
-  text-align: center;
-  background: transparent url(../../img/bg-global-nav.jpg) repeat-x top left;
   border-bottom: 1px solid #fff;
   .box-shadow-6;
+  background-color: #600;
   ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+		margin: 4px 0;
+		padding: 0;
+		list-style: none;
   }
   .mainnavul {
     z-index: 10;
@@ -223,92 +220,22 @@ a.see-more:hover {
   }
   li {
     margin: 0;
-    padding: 0 16px;
-    font: 16px/33px Georgia, "Times New Roman", Times, serif;
     text-transform: uppercase;
-    display: inline;
     position: relative;
   }
   li a:link,
   li a:visited {
-    background-image: url(../../img/pointer.png);
-    background-position: center 40px;
-    background-repeat: no-repeat;
-    padding: 8px 0;
     color: #FFF;
+    display: block;
+    padding: 3px 16px 2px;
   }
   li a:hover,
-  li a.active,
-  li a.active-hover {
-    background-position: center 20px;
-    color: #F0EBD6;
+  li a.active {
+    color: #600;
+    background-color: #FFF;
   }
   .dropdown {
-    background-color: #fff;
-    padding: 2px 8px 3px;
-    position: absolute;
-    top: 27px;
-    left: 12px;
-    visibility: hidden;
-    opacity: 0;
-    border: 1px solid #ccc;
-    border-top: 0;
-    z-index: 100;
-    .trans 
-  }
-  li.dropit:hover .dropdown {
-    opacity: 1;
-    visibility: visible;
-  }
-  .dropdown ul {
-    margin: 4px 0 5px;
-    padding: 0;
-  }
-  .dropdown h2 {
-    border-bottom: #999 1px solid;
-    font-size: 1.4em;
-    text-align: left;
-    margin: 2px;
-  }
-  .dropdown li {
-    padding: 0;
-    margin: 0;
-    display: block;
-    list-style-type: disc;
-    color: @main-link-color;
-  }
-  .dropdown li a {
-    padding: 3px 5px;
-    color: #600;
-    display: block;
-    background-image: none;
-    font: .75em @body-font;
-    text-align: left;
-    text-transform: none;
-  }
-  .dropdown li a:hover,
-  .dropdown li a:active {
-    color: #428649;
-    background-color: @main-bg-color;
-  }
-  .rest-nav {
-    width: 220px;
-  }
-  .blog-nav {
-    width: 140px;
-  }
-  .tv-nav {
-    width: 130px;
-  }
-  .em-nav {
-    width: 186px;
-  }
-  .news-nav {
-    width: 210px;
-  }
-  .shop-nav {
-    left: -110px;
-    width: 200px;
+    display: none;
   }
 }
 
@@ -318,57 +245,50 @@ a.see-more:hover {
 --------------------------------------------- */
 
 .rest #main-container {
-	background: #F3ECE4 url('../../img/img1.jpg') no-repeat center 30px;
-	background-attachment:fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background-color: #F3ECE4;
 }
 
 #main-content {  
   margin-top: 0;
+  .er-logo {
+  	display: block;
+  	margin: 10px auto;
+  	text-align: center;
+  }
   #city-filter {
-    float: right;
     background-color: rgba(255,255,255,.5);
     .rounded;
-    margin-bottom: 60px;
-    width: 63.01886%; /* (700 - (16 * 2)) / 1060 */    
     padding: 10px 16px;
+    margin-bottom: 16px;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1em;
     overflow: hidden;
     span {
       color: @burgundy;
-      float: left;
-      margin-right: 2%;
+      display: block;
     }
     ul {
       .no-indent;
+      display: none;
+      margin-top: 6px;
       li {
-        float: left;
-        border-right: 1px solid #ccc;
         white-space: nowrap;
-        &.last {
-          border-right: none;          
-        }
         a {
           display: block;
-          padding: 0 8%;
+          padding: .5%;
           white-space: nowrap;
         }
-        &.first a {
-          padding-left: 0;
-        }
-        &.last a {
-          padding-right: 0;
-        }
       }      
+    }
+    &:target {
+    	ul {
+    		display: block;
+    	}
     }    
   }
   .toggle-gallery {
   	position: absolute;
-  	right: -60px;
+  	right: 2%;
   	top: -68px;
   	height: 44px;
   	width: 53px;
@@ -390,15 +310,14 @@ a.see-more:hover {
     }
     ul {
       .no-indent;
+      text-align: center;
       li {
         background-color: white;
-        float: left;
-        width: 32.07547%; /* 340 / 1060 */
-        margin-bottom: 36px;
-        margin-right: 1.79245%; /* 19 / 1060 */
-        &:nth-child(3n+3) {
-          margin-right: 0;
-        }
+        margin: 0 auto 36px;
+        overflow: hidden;
+        display: block;
+        width: 98%;
+        text-align: left;
         &:hover {
           .box-shadow-2;
         }
@@ -410,7 +329,9 @@ a.see-more:hover {
           margin: 12px;
         }
         img {
-          margin-bottom: 12px;
+          margin: 0 auto 12px;
+          display: block;
+          width: 100%;
         }
         h2 {
           margin: 0;
@@ -423,19 +344,18 @@ a.see-more:hover {
 .home #main-content,
 .rest-menu .main-content-inner {
 	.center-content;
-	margin-top: 60px;
+	margin-top: 20px;
 }
 
 #sub-head {
 	background-color: rgba(0,0,0,.6);
-	position: fixed;
-	z-index: 2;
 	width: 100%;
-	top: 32px;
 	.trans;
 	.sub-head-inner {
 		position: relative;		
-		.center-content;		
+		.center-content;
+		width: 100%;
+		padding: 0;	
 		.er-logo {
 			margin: 9px 0 8px;
 			display: none;
@@ -448,20 +368,31 @@ a.see-more:hover {
 				.no-indent;
 				margin: 0 auto;
 				overflow: hidden;
-				width: 608px;
 				li {
+					font-family: @header-font;
+					font-size: 1.2em;				  
+					text-transform: uppercase;
 				  float: left;
-				  border-right: 1px solid rgba(255,255,255,.4);
-				  font-family: @header-font;
-				  font-size: 1.5em;				  
-				  text-transform: uppercase;
-				  &.first {
+				  width: 33.1%;
+				  &.menu-home, 
+				  &.menu-menu,
+				  &.menu-photos {
+				  	border-bottom: 1px solid rgba(255,255,255,.4);
+				  }				  
+				  &.menu-menu,
+				  &.menu-photos,
+				  &.menu-contact,
+				  &.menu-private {
 				    border-left: 1px solid rgba(255,255,255,.4);          
+				  }
+				  &.menu-our-team {
+				  	clear: left;
 				  }
 				  a {
 				    display: block;
 				    text-align: center;
-				    padding: 18px 18px 16px;
+				    padding: 2px;
+				    width: 100%;
 				    color: #fff;				  
 					  &:hover {
 					  	color: @main-link-color;
@@ -473,7 +404,7 @@ a.see-more:hover {
 		}	
 		.photo-nav {
 			position: absolute;
-			right: 0;
+			right: 4px;
 			bottom: -56px;
 			width: 90px;
 			margin-bottom: 14px;
@@ -737,7 +668,7 @@ a.see-more:hover {
 --------------------------------------------- */
 
 .rest-menu #main-content {
-	padding-top: 110px;
+	padding-top: 136px;
 }
 
 .rest-menu #main-content ul.menus {
@@ -864,9 +795,7 @@ a.see-more:hover {
   	text-decoration: underline;
   }
   .social {
-    width: 74.5283%; /* 740 / 1060 */
     margin-bottom: 20px;
-    float: left;
     ul {
       font-size: 90%;
       .no-indent;
@@ -883,15 +812,14 @@ a.see-more:hover {
       }
     }
     .twitter-all {
-      float: left;
-      width: 33.78378%; /* 250 / 740 */
+    	margin-bottom: 16px;
+    	overflow: hidden;
       li {
-        float: none;
+        float: left;
       }
     }
     .fb-all {
-      float: left;
-      width: 64.86486%; /* 480 / 740 */      
+   		overflow: hidden;
     }
   }
   .block {
@@ -929,7 +857,6 @@ a.see-more:hover {
   	}
   }
   .signup {    
-    float: right;
     input {
       width: 73.6%; 
     }
@@ -966,7 +893,9 @@ a.see-more:hover {
 --------------------------------------------- */
 
 @media only all and (max-width : 1024px) {
-
+	body {
+		font-size: 90%;
+	}
 }
 
 
