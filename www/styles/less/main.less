@@ -1,6 +1,18 @@
 /* ===========================================
    Main styles for Emeril's Restaurants
    Author: Terrance Pitre
+   Version: 0.1
+   URL: http://southleft.com
+   
+   LEGEND:
+   1. LESS VARS AND DECLARATIONS
+   2. BASE
+   3. MAIN
+   	3A. TOP NAVIGATION
+   	3B. CONTENT
+   		3B-1. MENU PAGES
+   	3C. FOOTER
+   5. MEDIA QUERIES
    =========================================== */
 
 #widths {
@@ -12,13 +24,13 @@
 	z-index: 10000;
 }
 
-/* CSS Imports
+/* CSS IMPORTS
 ---------------------------------------------- */
 @import url('boilerplate.css');
 @import url('fonts.css');
 
 
-/* @group LESS
+/* @group 1. LESS VARS AND DECLARATIONS
 ---------------------------------------------- */
 @main-font-color: #3E4549;
 @main-link-color: #069;
@@ -89,12 +101,16 @@
 	text-decoration: underline;
 	color: darken(@burgundy, 10%);
 }
-/* @end LESS */
+.font-size-300 {
+	font-size: 0.875em; /* 14px / 16px */
+	line-height: 1.4375em; /* 23px / 16px */
+}
+/* @end 1. LESS VARS AND DECLARATIONS */
 
-/* @group Base Styles
+/* @group 2. BASE
 ---------------------------------------------- */
 body {
-    font: normal 100% @body-font;
+    font: normal 100%/1.4 @body-font;
     color: @main-font-color;
     background: @main-bg-color url(../../img/bg-body.gif) repeat top left;
     padding: 0;
@@ -131,6 +147,9 @@ h2 {
 h3 {
   font-size: 1.375em; /* 22 / 16 */
   letter-spacing: 0;
+}
+p {
+	.font-size-300;
 }
 input {
   font-size: .7em;
@@ -196,19 +215,21 @@ a.see-more:hover {
 	font-size: 200%;
 	font-weight: normal;
 }
-/* @end */
+/* @end 2. BASE */
 
-/* @group Main Styles 
+/* @group 3. MAIN
 ---------------------------------------------- */
 
-/* @group Top Navigation
+/* @group 3A. TOP NAVIGATION
 --------------------------------------------- */
 
 #main-nav {
   width: 100%;
   border-bottom: 1px solid #fff;
-  .box-shadow-6;
   background-color: #600;
+  position: relative;
+  margin-top: -194px;
+  .box-shadow-6;  
   ul {
 		margin: 4px 0;
 		padding: 0;
@@ -237,17 +258,28 @@ a.see-more:hover {
   .dropdown {
     display: none;
   }
+  span.tab {
+  	display: block;
+  	height: 30px;
+  	width: 30px;
+  	background: transparent url(../../img/icon-sprite.png) no-repeat center -289px;
+  	position: absolute;
+  	left: 50%;
+  	margin-left: -15px;
+  	bottom: -15px;
+  	z-index: 50;
+  }
 }
 
-/* @end Top Navigation*/
+/* @end 3A. TOP NAVIGATION */
 
-/* @group Main Content
+/* @group 3B. CONTENT
 --------------------------------------------- */
 
-.rest #main-container {
+#main-container {
 	background-color: #F3ECE4;
+	margin-bottom: -30px;
 }
-
 #main-content {  
   margin-top: 0;
   .er-logo {
@@ -255,91 +287,89 @@ a.see-more:hover {
   	margin: 10px auto;
   	text-align: center;
   }
-  #city-filter {
-    background-color: rgba(255,255,255,.5);
-    .rounded;
-    padding: 10px 16px;
-    margin-bottom: 16px;
-    font-weight: 600;
-    font-size: 1em;
-    overflow: hidden;
-    span {
-      color: @burgundy;
-      display: block;
-    }
-    ul {
-      .no-indent;
-      display: none;
-      margin-top: 6px;
-      li {
-        white-space: nowrap;
-        a {
-          display: block;
-          padding: .5%;
-          white-space: nowrap;
-        }
-      }      
-    }
-    &:target {
-    	ul {
-    		display: block;
-    	}
-    }    
+}
+#city-filter {
+  background-color: rgba(255,255,255,.5);
+  .rounded;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 1em;
+  overflow: hidden;
+  span {
+    color: @burgundy;
+    display: block;
   }
-  .toggle-gallery {
-  	position: absolute;
-  	right: 2%;
-  	top: -68px;
-  	height: 44px;
-  	width: 53px;
-  	z-index: 1;
-  	background: transparent url(../../img/tog-sprite.png) no-repeat center top;
-  	&.down {
-  		background-position: center bottom;
-  	}
-  }
-  .rest-cities {
-    clear: both;
-    margin-bottom: 16px;
-    padding-bottom: 4px;
-    overflow: hidden;
-    h1 {
-      border-bottom: @border-dotted;
-      padding-bottom: 0;
-      margin: 0 0 20px;
-    }
-    ul {
-      .no-indent;
-      text-align: center;
-      li {
-        background-color: white;
-        margin: 0 auto 36px;
-        overflow: hidden;
+  ul {
+    .no-indent;
+    display: none;
+    margin-top: 6px;
+    li {
+      white-space: nowrap;
+      a {
         display: block;
-        width: 98%;
-        text-align: left;
-        &:hover {
-          .box-shadow-2;
-        }
-        .trans;
-        .box-shadow-1;
-        .rounded;
-        a {
-          display: block;
-          margin: 12px;
-        }
-        img {
-          margin: 0 auto 12px;
-          display: block;
-          width: 100%;
-        }
-        h2 {
-          margin: 0;
-        }
+        padding: .5%;
+        white-space: nowrap;
+      }
+    }         
+  }
+  &.city-open ul {
+  	display: block;
+  }    
+}
+.toggle-gallery {
+	position: absolute;
+	right: 2%;
+	top: -68px;
+	height: 44px;
+	width: 53px;
+	z-index: 1;
+	background: transparent url(../../img/tog-sprite.png) no-repeat center top;
+	&.down {
+		background-position: center bottom;
+	}
+}
+section.rest-cities {
+  clear: both;
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+  overflow: hidden;
+  h1 {
+    border-bottom: @border-dotted;
+    padding-bottom: 0;
+    margin: 0 0 20px;
+  }
+  ul {
+    .no-indent;
+    text-align: center;
+    li {
+      background-color: white;
+      margin: 0 auto 36px;
+      overflow: hidden;
+      display: block;
+      width: 98%;
+      text-align: left;
+      &:hover {
+        .box-shadow-2;
+      }
+      .trans;
+      .box-shadow-1;
+      .rounded;
+      a {
+        display: block;
+        margin: 12px;
+      }
+      img {
+        margin: 0 auto 12px;
+        display: block;
+        width: 100%;
+      }
+      h2 {
+        margin: 0;
       }
     }
-  }  
-}
+  }
+}  
 
 .home #main-content,
 .rest-menu .main-content-inner {
@@ -350,9 +380,10 @@ a.see-more:hover {
 #sub-head {
 	background-color: rgba(0,0,0,.6);
 	width: 100%;
+	margin-top: 14px;
 	.trans;
 	.sub-head-inner {
-		position: relative;		
+		position: relative;				
 		.center-content;
 		width: 100%;
 		padding: 0;	
@@ -362,93 +393,85 @@ a.see-more:hover {
 			img {
 				.trans;
 			}
-		}		
-		#sub-nav {			
-			ul {
-				.no-indent;
-				margin: 0 auto;
-				overflow: hidden;
-				li {
-					font-family: @header-font;
-					font-size: 1.2em;				  
-					text-transform: uppercase;
-				  float: left;
-				  width: 33.1%;
-				  &.menu-home, 
-				  &.menu-menu,
-				  &.menu-photos {
-				  	border-bottom: 1px solid rgba(255,255,255,.4);
-				  }				  
-				  &.menu-menu,
-				  &.menu-photos,
-				  &.menu-contact,
-				  &.menu-private {
-				    border-left: 1px solid rgba(255,255,255,.4);          
-				  }
-				  &.menu-our-team {
-				  	clear: left;
-				  }
-				  a {
-				    display: block;
-				    text-align: center;
-				    padding: 2px;
-				    width: 100%;
-				    color: #fff;				  
-					  &:hover {
-					  	color: @main-link-color;
-					  	background-color: #fff;
-					  }
-					}
-				}
-			}
-		}	
-		.photo-nav {
-			position: absolute;
-			right: 4px;
-			bottom: -56px;
-			width: 90px;
-			margin-bottom: 14px;
-			a {
-				background: url(../../img/icon-sprite.png) no-repeat center -126px transparent;
-				text-indent: -9999px;
-				display: block;
-				height: 30px;
-				width: 30px;
-				opacity: .7;
-				&.prev {
-					float: left;
-				}
-				&.next {
-					float: right;
-					background-position: 0 -160px;
-				}
-				&.pause {
-					float: left;
-					background-position: 0 -194px;
-					&.play {
-						background-position: 0 -226px;
-					}
-				}
-				&:hover {
-					opacity: 1;
-				}
-			}
-		}	
-	}
-	&.active {
-		background-color: rgba(96,62,55,0.88);
-		.box-shadow-6;
-		.er-logo img {
-			max-width: 60%;
-		}
-		#sub-nav ul li a {
-			padding: 11px 18px 5px;
-		}
-		.photo-nav {
-			display: none;
 		}
 	}
-}
+}	
+#sub-nav {
+	ul {
+		.no-indent;
+		margin: 0 auto;
+		overflow: hidden;
+		li {
+			font-family: @header-font;
+			font-size: 1.2em;				  
+			text-transform: uppercase;
+		  float: left;
+		  width: 33.23%;
+		  &.menu-home, 
+		  &.menu-menu,
+		  &.menu-photos {
+		  	border-bottom: 1px solid rgba(255,255,255,.4);
+		  }				  
+		  &.menu-menu,
+		  &.menu-photos,
+		  &.menu-contact,
+		  &.menu-private {
+		    border-left: 1px solid rgba(255,255,255,.4);          
+		  }
+		  &.menu-our-team {
+		  	clear: left;
+		  }
+		  &.menu-photos,
+		  &.menu-contact {
+		  	width: 33.6%;
+		  }
+		  a {
+		    display: block;
+		    text-align: center;
+		    padding: 2px 0;
+		    width: 100%;
+		    color: #fff;				  
+			  &:hover {
+			  	color: @main-link-color;
+			  	background-color: #fff;
+			  }
+			}
+		}
+	}
+}	
+nav.photo-nav {
+	position: absolute;
+	right: 4px;
+	bottom: -56px;
+	width: 90px;
+	display: none;
+	margin-bottom: 14px;
+	a {
+		background: url(../../img/icon-sprite.png) no-repeat center -126px transparent;
+		text-indent: -9999px;
+		display: block;
+		height: 30px;
+		width: 30px;
+		opacity: .7;
+		&.prev {
+			float: left;
+		}
+		&.next {
+			float: right;
+			background-position: 0 -160px;
+		}
+		&.pause {
+			float: left;
+			background-position: 0 -194px;
+			&.play {
+				background-position: 0 -226px;
+			}
+		}
+		&:hover {
+			opacity: 1;
+		}
+	}
+}	
 
 #main-content #col1 {
 	float: left;
@@ -456,215 +479,196 @@ a.see-more:hover {
 }
 
 .rest #main-content {
-	padding-top: 151px;
-	.rest-welcome {			
-		.center-content;
-		.rest-welcome-inner {
-			background-color: rgba(255,255,255,.75);
-			width: 34.90566%; /* 370 / 1060 */
-			padding: 26px 3.48837% 16px; /* (30 / 370) / 2 */
-			float: right;
-			clear: right;
-			h1 {
-				margin: 0 0 16px;
-			}
-			h2 {
-				font-size: 1.4em;
-				margin: 4px 0 8px;
-				.hdr-reset;
-				font-family: @alt-header-font;				
-			}
-			.rest-intro {			
-				p {
-					margin: 6px 0 16px;
-					font-family: @alt-header-font;
-					font-style: italic;
-					line-height: 1.43;
-				}
-			}
-			.rest-special {
-				border-top: @border-dotted;
-				h3 {
-					font-family: @body-font;
-					font-size: 1.2em;
-					margin-bottom: 4px;
-					.hdr-reset;
-					font-weight: 600;
-				}
-				p {
-					margin: 8px 0;
-				}
-			}
-		}		
-	}
-	.rest-main {
-		clear: both;
-		padding: 24px 0;
-		margin-top: 46px;
-		border-top: 1px solid #fff;
-		.box-shadow-6;
-		background: @main-bg-color url(../../img/bg-body.gif) repeat top left;
-		ul {
-			.no-indent;
-		}
-		.rest-main-inner {
-			position: relative;
-			.center-content;
-			.block {
-				border-top: 2px solid @green;
-				float: left;
-				margin-right: 1.98113%; /* 21 / 1060 */
-				h2 {
-					margin: 14px 0 20px;
-				}			
-			}			
-			.whats-happening {
-				width: 40.56603% /* 430 / 1060 */;
-				float: left;
-				ul li {
-					overflow: hidden;
-					border-bottom: @border-dotted;
-					border-bottom-color: lighten(@gray, 16%);
-					padding-bottom: 10px;
-					margin-bottom: 24px;
-					.feat-img {
-						display: block;
-						float: left;
-						margin-right: 16px;
-						.box-shadow-1;				
-					}
-					.push-feat-img {
-						margin-left: 29.30232%; /* 126 / 430 */
-					}
-					h3 {
-						margin: 0 0 6px;
-						font-size: 1.2em;						
-						.hdr-reset;
-						font-weight: 600;
-					}
-					p {
-						margin: 0 0 10px;
-					}
-				}				
-			}			
-		}
-	}
-	.follow-us {
-		margin-bottom: 36px;
-		.avatar{
-			overflow: hidden;
-			margin-bottom: 10px;
-			display: block;
-			img {
-				float: left;
-				margin-right: 8px;
-			}
-			h3 {
-				margin: 0;
-			}
-		}
-		ul li {
-			border-bottom: @border-dotted;
-			border-bottom-color: lighten(@gray, 16%);
-			padding-bottom: 15px;
-			margin-bottom: 15px;
-			font-size: 80%;
-			.tweet-meta {
-				font-size: 80%;
-				display: block;
-				text-align: right;
-				a {
-					color: @burgundy;
-				}
-				a:hover {
-					.alt-hover;
-				}
-			}
-		}
-		.twitter-logo {
-			float: right;
-		}
-	}
-	#sidebar {
+	padding-top: 7px;		
+}
+div.rest-welcome {			
+	.center-content;
+	div.rest-welcome-inner {
+		background-color: rgba(255,255,255,.75);
+		padding: 26px 3.48837% 16px; /* (30 / 370) / 2 */
 		float: right;
 		clear: right;
-		width: 23.5849%; /* 250 / 1060 */
 		h1 {
-			margin-top: 0;
+			margin: 0 0 16px;
 		}
-		.block {
-			margin-right: 0;
+		h2 {
+			font-size: 1.4em;
+			margin: 4px 0 8px;
+			.hdr-reset;
+			font-family: @alt-header-font;				
 		}
-		.reserve {
-			margin-bottom: 36px;
-			width: 100%;
-			h2 {
-				margin-bottom: 16px;
-			}
-			.reserve-form {
-				font-size: 90%;
-				overflow: hidden;
-				label {
-					text-transform: uppercase;
-					font-size: .8em;
-					display: block;
-				}
-				select {
-					width: 100%;
-					margin-top: 2px;
-				}	
-				span {
-					display: block;
-					float: left;
-					overflow: hidden;
-					margin-bottom: 12px;
-				}
-				.reserve-rest {							
-					width: 100%;
-					margin-bottom: 12px;
-				}					
-				.reserve-date {
-					width: 42.4%; /* 106 / 250 */
-					margin-right: 3.6%; /* 9 / 250 */
-					input {
-						width: 86%;
-						background: #fff url(../../img/icon-sprite.png) no-repeat 98% -97px;
-					}
-				}
-				.reserve-time {
-					width: 32%; /* 80 / 250 */
-				}
-				.reserve-size {
-					float: right;
-				}
-				button {
-					font-size: .74em;
-					float: right;
-				}
+		div.rest-intro {			
+			p {
+				margin: 6px 0 16px;
+				font-family: @alt-header-font;
+				font-style: italic;
+				line-height: 1.43;
 			}
 		}
-		.promo {
-			a {
-				display: block;
-				text-align: center;
+		div.rest-special {
+			border-top: @border-dotted;
+			h3 {
+				font-family: @body-font;
+				font-size: 1.2em;
+				margin-bottom: 4px;
+				.hdr-reset;
+				font-weight: 600;
+			}
+			p {
+				margin: 8px 0;
 			}
 		}
 	}
 }
-
-.rest-home #main-content .follow-us {
-	width: 32.07547%; /* 340 / 1060 */	
-	margin-bottom: 0;
+section.rest-main {
+	clear: both;
+	padding: 24px 0;
+	margin-top: 46px;
+	border-top: 1px solid #fff;
+	.box-shadow-6;
+	background: @main-bg-color url(../../img/bg-body.gif) repeat top left;
+	ul {
+		.no-indent;
+	}
+}
+div.rest-main-inner {
+	position: relative;
+	.center-content;
+	.block {
+		border-top: 2px solid @green;
+		overflow: hidden;
+		margin-bottom: 26px;
+		h2 {
+			margin: 14px 0 20px;
+		}			
+	}
+}	
+div.whats-happening {
 	ul li {
-		font-size: 100%;
+		overflow: hidden;
+		border-bottom: @border-dotted;
+		border-bottom-color: lighten(@gray, 16%);
+		padding-bottom: 10px;
+		margin-bottom: 24px;
+		a.feat-img {
+			display: block;
+			float: left;
+			margin-right: 16px;
+			.box-shadow-1;				
+		}
+		div.push-feat-img {
+			/*margin-left: 34.05405%;*/ /* 126 / 370 */
+			margin-left: 126px;
+		}
+		h3 {
+			margin: 0 0 6px;
+			font-size: 1.2em;						
+			.hdr-reset;
+			font-weight: 600;
+		}
+		p {
+			margin: 0 0 10px;
+		}
+	}				
+}			
+div.follow-us {
+	a.avatar{
+		overflow: hidden;
+		margin-bottom: 10px;
+		display: block;
+		img {
+			float: left;
+			margin-right: 8px;
+		}
+		h3 {
+			margin: 0;
+		}
+	}
+	ul li {
+		border-bottom: @border-dotted;
+		border-bottom-color: lighten(@gray, 16%);
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		span.tweet-meta {
+			display: block;
+			text-align: right;
+			.font-size-300;
+			a {
+				color: @burgundy;
+			}
+			a:hover {
+				.alt-hover;
+			}
+		}
+	}
+	a.twitter-logo {
+		float: right;
 	}
 }
-
-.rest-home #main-content #sidebar {
-	clear: none;	
+div.reserve {
+	margin-bottom: 36px;
+	width: 100%;
+	h2 {
+		margin-bottom: 16px;
+	}
+	form.reserve-form {
+		font-size: 90%;
+		overflow: hidden;
+		label {
+			text-transform: uppercase;
+			font-size: .8em;
+			display: block;
+		}
+		select {
+			width: 100%;
+			margin-top: 2px;
+		}	
+		span {
+			display: block;
+			float: left;
+			overflow: hidden;
+			margin-bottom: 12px;
+		}
+		span.reserve-rest {							
+			width: 100%;
+			margin-bottom: 12px;
+		}					
+		span.reserve-date {
+			width: 42.4%; /* 106 / 250 */
+			margin-right: 3.6%; /* 9 / 250 */
+			input {
+				width: 86%;
+				background: #fff url(../../img/icon-sprite.png) no-repeat right -97px;
+			}
+		}
+		span.reserve-time {
+			width: 32%; /* 80 / 250 */
+		}
+		span.reserve-size {
+			float: right;
+		}
+		button {
+			font-size: .74em;
+			float: right;
+		}
+	}
+}
+div.promo {
+	a {
+		display: block;
+		text-align: center;
+	}
+}
+#sidebar {
+	h1 {
+		margin-top: 0;
+	}
+	.block {
+		margin-right: 0;
+	}	
 }
 
-/* @group Menu Styles
+/* @group 3B-1. MENU PAGES
 --------------------------------------------- */
 
 .rest-menu #main-content {
@@ -705,7 +709,6 @@ a.see-more:hover {
     }
   }
 }
-
 .rest-menu #main-content .menu {
 	background-color: rgba(255,255,255,.6);
 	.menu-inner {
@@ -761,11 +764,11 @@ a.see-more:hover {
 	}
 }
 
-/* @end Menu Styles */
+/* @end 3B-1. MENU PAGES */
 
-/* @end Main Content */
+/* @end 3B. CONTENT */
 
-/* @group Footer Styles
+/* @group 3C. FOOTER
 --------------------------------------------- */
 
 #main-footer {
@@ -779,7 +782,7 @@ a.see-more:hover {
   .footer-btm-inner {
     .center-content;
   }
-  .main-footer-inner {
+  div.main-footer-inner {
     margin-top: 20px;
     margin-bottom: 28px;
     overflow: hidden;
@@ -794,7 +797,7 @@ a.see-more:hover {
   a:hover {
   	text-decoration: underline;
   }
-  .social {
+  div.social {
     margin-bottom: 20px;
     ul {
       font-size: 90%;
@@ -811,25 +814,25 @@ a.see-more:hover {
         }
       }
     }
-    .twitter-all {
+    div.twitter-all {
     	margin-bottom: 16px;
     	overflow: hidden;
       li {
         float: left;
       }
     }
-    .fb-all {
+    div.fb-all {
    		overflow: hidden;
     }
   }
   .block {
-  	width: 23.5849%; /* 250 / 1060 */
-  	float: left;
+  	margin-bottom: 30px;
+  	font-size: 110%;
   }
-  .address address {
+  div.address address {
   	line-height: 1.4;
   }
-  .hours {
+  div.hours {
   	span {
   		display: block;
   		&.lunch-hours {
@@ -837,7 +840,7 @@ a.see-more:hover {
   		}
   	}
   }
-  .friends {
+  div.friends {
   	ul {
   		.no-indent;
   		li {
@@ -845,18 +848,18 @@ a.see-more:hover {
   			margin-bottom: 4px;
   			background: transparent url(../../img/icon-sprite.png) no-repeat left top;
   			&.facebook {
-  				background-position: -3px -3px;
+  				background-position: -3px -1px;
   			}
   			&.twitter {
-  				background-position: -3px -36px;
+  				background-position: -3px -34px;
   			}
   			&.foursquare {
-  				background-position: -3px -68px;
+  				background-position: -3px -66px;
   			}
   		}
   	}
   }
-  .signup {    
+  div.signup {    
     input {
       width: 73.6%; 
     }
@@ -866,35 +869,28 @@ a.see-more:hover {
     	padding-right: 0;
     }
   }
-  .footer-btm {
+  div.footer-btm {
     clear: both;
     font-size: 70%;
     overflow: hidden;
     padding-bottom: 10px;
     background-color: rgba(0,0,0,.3);
-    .footer-btm-inner {
+    div.footer-btm-inner {
       padding: 10px 0;
-    }
-    .legal {
-      float: left; 
-    }
-    .dotcom-logo {
-      float: right;
-    }
+    }   
   }
 }
 
-/* @end Footer Styles */
+/* @end 3C. FOOTER */
 
-/* @end Main Styles */
+/* @end 3. MAIN */
 
 
-/* @group Media Queries
+/* @group 4. MEDIA QUERIES
 --------------------------------------------- */
 
 @media only all and (max-width : 1024px) {
 	body {
-		font-size: 90%;
 	}
 }
 
@@ -902,4 +898,4 @@ a.see-more:hover {
 
 
 
-/* @end */
+/* @end 4. MEDIA QUERIES */

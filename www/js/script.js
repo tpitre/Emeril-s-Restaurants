@@ -18,6 +18,25 @@ var er = {
 //		});
 	},
 	
+	miscFunct: function(){
+		
+		var $cityFilter = $('#city-filter'),
+				$mainNav		= $('#main-nav');
+		
+		$cityFilter.click(function() {
+			$(this).toggleClass('city-open');
+		});
+		
+		$mainNav.toggle(
+			function(){
+				$(this).animate({ marginTop: 0 }, 300, 'easeInOutQuint');
+			},
+			function() {
+				$(this).animate({ marginTop: -194 }, 300, 'easeInOutQuint');
+			}
+		);
+	},
+	
 	toggleGallery: function(){
 		
 		var $togGallery = $('.toggle-gallery');
@@ -151,30 +170,30 @@ var er = {
 	addPlaceHolder: function(){
 	
 		// add placeholder to browsers that don't recognize them
-		if(!Modernizr.input.placeholder){
-		
-			$('[placeholder]').focus(function(){
-				var input = $(this);
-				if (input.val() === input.attr('placeholder')){
-					input.val('');
-					input.removeClass('placeholder');
-				}
-			}).blur(function(){
-				var input = $(this);
-				if (input.val() === '' || input.val() === input.attr('placeholder')) {
-					input.addClass('placeholder');
-					input.val(input.attr('placeholder'));
-				}
-			}).blur();
-			$('[placeholder]').parents('form').submit(function(){
-				$(this).find('[placeholder]').each(function() {
-					var input = $(this);
-					if (input.val() === input.attr('placeholder')){
-						input.val('');
-					}
-				});
-			});
-		}
+//		if(!Modernizr.input.placeholder){
+//
+//			$('[placeholder]').focus(function(){
+//				var input = $(this);
+//				if (input.val() === input.attr('placeholder')){
+//					input.val('');
+//					input.removeClass('placeholder');
+//				}
+//			}).blur(function(){
+//				var input = $(this);
+//				if (input.val() === '' || input.val() === input.attr('placeholder')) {
+//					input.addClass('placeholder');
+//					input.val(input.attr('placeholder'));
+//				}
+//			}).blur();
+//			$('[placeholder]').parents('form').submit(function(){
+//				$(this).find('[placeholder]').each(function() {
+//					var input = $(this);
+//					if (input.val() === input.attr('placeholder')){
+//						input.val('');
+//					}
+//				});
+//			});
+//		}
 	
 	}
 	
@@ -183,6 +202,7 @@ var er = {
 $(function(){
 	
 	// init the functions
+	er.miscFunct();
 	er.addPlaceHolder();
 	er.toggleGallery();
 	//er.transformNav();

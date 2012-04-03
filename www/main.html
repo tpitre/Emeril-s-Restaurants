@@ -148,6 +148,7 @@
               </div>
             </li>
           </ul>
+          <span class="tab"></span>
 				</nav> <!-- /#main-nav -->
 			</header> <!-- /#main-header -->
 			
@@ -194,6 +195,33 @@
         
         <section class="rest-main">
         	<div class="rest-main-inner clearfix">
+        		<div class="block reserve">
+        			<h2>Reserve</h2>
+        			<form class="reserve-form" action="" method="post">	        		
+        		    <span class="reserve-rest">
+        		      <select id="select-rest">
+        		          <option selected="selected">Emeril's New Orleans</option>
+        		      </select>
+        		   	</span>		
+        		    <span class="reserve-date">
+        		      <label for="select-date">Date:</label> 
+        		      <input type="date" id="select-date"> 
+        		    </span>		
+        		    <span class="reserve-time">
+        		    	<label for="select-time">Time:</label> 
+        		    	<select id="select-time">
+        		    		<option value="12:00 AM">7:00 PM</option>
+        		      </select>
+        		    </span>
+        		    <span class="reserve-size">
+        		    	<label for="select-size">Guests:</label>
+        		    	<select id="select-size">
+        		        <option value="1">2</option>
+        		      </select>
+        		    </span>
+        		    <button class="btn">Reserve Now</button> 
+        		  </form>		            	        		
+        		</div> <!-- /.reserve -->
 	        	<div class="block whats-happening">
 	        		<h2>What's Happening</h2>
 	        		<ul>
@@ -250,36 +278,7 @@
 	        		<a href="" class="twitter-logo"><img src="img/logo-twitter.png"></a>
 	        	</div> <!-- /.follow-us -->
 	        	
-	        	<aside id="sidebar">
-	        	
-		        	<div class="block reserve">
-		        		<h2>Reserve</h2>
-	        			<form class="reserve-form" action="" method="post">	        		
-		              <span class="reserve-rest">
-			              <select id="select-rest">
-			                  <option selected="selected">Emeril's New Orleans</option>
-					          </select>
-				         	</span>		
-		              <span class="reserve-date">
-			              <label for="select-date">Date:</label> 
-			              <input type="date" id="select-date"> 
-		              </span>		
-		              <span class="reserve-time">
-		              	<label for="select-time">Time:</label> 
-		              	<select id="select-time">
-		              		<option value="12:00 AM">7:00 PM</option>
-				            </select>
-		              </span>
-		              <span class="reserve-size">
-		              	<label for="select-size">Guests:</label>
-		              	<select id="select-size">
-		                  <option value="1">2</option>
-				            </select>
-				          </span>
-		              <button class="btn">Reserve Now</button> 
-		            </form>		            	        		
-		        	</div> <!-- /.reserve -->
-		        	
+	        	<aside id="sidebar">		        	
 		        	<div class="block promo">
 		        		<h2>Gift Cards</h2>
 		        		<a href=""><img src="img/gift-cards.png"></a>
