@@ -231,13 +231,13 @@ a.see-more:hover {
   margin-top: -194px;
   .box-shadow-6;  
   ul {
-		margin: 4px 0;
-		padding: 0;
+		padding: 4px 0;
 		list-style: none;
   }
   .mainnavul {
     z-index: 10;
     position: relative;
+    overflow: hidden;
   }
   li {
     margin: 0;
@@ -378,9 +378,10 @@ section.rest-cities {
 }
 
 #sub-head {
-	background-color: rgba(0,0,0,.6);
+	background-color: rgba(255,255,255,.5);
 	width: 100%;
 	margin-top: 14px;
+	clear: both;
 	.trans;
 	.sub-head-inner {
 		position: relative;				
@@ -406,7 +407,7 @@ section.rest-cities {
 			font-size: 1.2em;				  
 			text-transform: uppercase;
 		  float: left;
-		  width: 33.23%;
+		  width: 33.2%;
 		  &.menu-home, 
 		  &.menu-menu,
 		  &.menu-photos {
@@ -423,14 +424,13 @@ section.rest-cities {
 		  }
 		  &.menu-photos,
 		  &.menu-contact {
-		  	width: 33.6%;
+		  	width: 33.3%;
 		  }
 		  a {
 		    display: block;
 		    text-align: center;
-		    padding: 2px 0;
+		    padding: 6px 0 4px;
 		    width: 100%;
-		    color: #fff;				  
 			  &:hover {
 			  	color: @main-link-color;
 			  	background-color: #fff;
@@ -484,20 +484,44 @@ nav.photo-nav {
 div.rest-welcome {			
 	.center-content;
 	div.rest-welcome-inner {
-		background-color: rgba(255,255,255,.75);
-		padding: 26px 3.48837% 16px; /* (30 / 370) / 2 */
-		float: right;
-		clear: right;
+		background: url(../../img/shadow-btm.png) repeat-x left bottom rgba(255,255,255,.75);
+		padding: 12px 3.48837% 16px; /* (30 / 370) / 2 */
+		-webkit-border-radius: 4px 4px 0 0;
+		-moz-border-radius: 4px 4px 0 0;
+		border-radius: 4px 4px 0 0;
+		.rest-main-img {
+			margin-bottom: 16px;
+			width: 100%;
+			.box-shadow-3;
+		}
 		h1 {
 			margin: 0 0 16px;
+			text-align: center;
 		}
 		h2 {
-			font-size: 1.4em;
+			font-size: 1.2em;
 			margin: 4px 0 8px;
 			.hdr-reset;
 			font-family: @alt-header-font;				
 		}
+		.block {
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+			border-bottom: @border-dotted;
+		}
+		.address,
+		.hours {
+			padding-top: 6px;
+			border-top: 4px solid #A6A6A6;
+			border-bottom: none;
+		}
+		.hours {
+			border-bottom: @border-dotted;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
 		div.rest-intro {			
+			clear: both;
 			p {
 				margin: 6px 0 16px;
 				font-family: @alt-header-font;
@@ -506,10 +530,11 @@ div.rest-welcome {
 			}
 		}
 		div.rest-special {
-			border-top: @border-dotted;
+			margin: 20px 0 0;
+			border-bottom: none;
 			h3 {
 				font-family: @body-font;
-				font-size: 1.2em;
+				font-size: 1em;
 				margin-bottom: 4px;
 				.hdr-reset;
 				font-weight: 600;
@@ -523,7 +548,6 @@ div.rest-welcome {
 section.rest-main {
 	clear: both;
 	padding: 24px 0;
-	margin-top: 46px;
 	border-top: 1px solid #fff;
 	.box-shadow-6;
 	background: @main-bg-color url(../../img/bg-body.gif) repeat top left;
@@ -558,7 +582,6 @@ div.whats-happening {
 		}
 		div.push-feat-img {
 			/*margin-left: 34.05405%;*/ /* 126 / 370 */
-			margin-left: 126px;
 		}
 		h3 {
 			margin: 0 0 6px;
@@ -582,6 +605,7 @@ div.follow-us {
 		}
 		h3 {
 			margin: 0;
+			line-height: 1;
 		}
 	}
 	ul li {
@@ -592,7 +616,9 @@ div.follow-us {
 		span.tweet-meta {
 			display: block;
 			text-align: right;
-			.font-size-300;
+			font-family: @alt-header-font;
+			font-style: italic;
+			font-size: 75%;
 			a {
 				color: @burgundy;
 			}
@@ -613,7 +639,7 @@ div.reserve {
 	}
 	form.reserve-form {
 		font-size: 90%;
-		overflow: hidden;
+		width: 100%;
 		label {
 			text-transform: uppercase;
 			font-size: .8em;
@@ -626,7 +652,6 @@ div.reserve {
 		span {
 			display: block;
 			float: left;
-			overflow: hidden;
 			margin-bottom: 12px;
 		}
 		span.reserve-rest {							
@@ -634,15 +659,15 @@ div.reserve {
 			margin-bottom: 12px;
 		}					
 		span.reserve-date {
-			width: 42.4%; /* 106 / 250 */
-			margin-right: 3.6%; /* 9 / 250 */
+			width: 44%;
+			margin-right: 10px;
 			input {
 				width: 86%;
-				background: #fff url(../../img/icon-sprite.png) no-repeat right -97px;
+				background: #fff url(../../img/icon-sprite.png) no-repeat right -96px;
 			}
 		}
 		span.reserve-time {
-			width: 32%; /* 80 / 250 */
+			width: 33%;
 		}
 		span.reserve-size {
 			float: right;
@@ -650,6 +675,7 @@ div.reserve {
 		button {
 			font-size: .74em;
 			float: right;
+			clear: both;
 		}
 	}
 }
@@ -658,6 +684,56 @@ div.promo {
 		display: block;
 		text-align: center;
 	}
+}
+.block {
+	margin-bottom: 30px;
+	font-size: 110%;
+	h3 {
+	  margin: 0 0 6px;
+	}
+}
+div.address address {
+	line-height: 1.4;
+}
+div.hours {
+	span {
+		display: block;
+		&.lunch-hours {
+			margin-bottom: 8px;
+		}
+	}
+}
+div.friends {
+	ul {
+		.no-indent;
+		li {
+			padding: 4px 0 4px 36px;
+			margin-bottom: 0;
+			background: transparent url(../../img/icon-sprite.png) no-repeat left top;
+			&.facebook {
+				background-position: -3px -1px;
+			}
+			&.twitter {
+				background-position: -3px -34px;
+			}
+			&.foursquare {
+				background-position: -3px -66px;
+			}
+			&.pinterest {
+				background-position: -3px -324px;
+			}
+		}
+	}
+}
+div.signup {    
+  input {
+    width: 73.6%; 
+  }
+  button {
+  	width: 14%;
+  	padding-left: 0;
+  	padding-right: 0;
+  }
 }
 #sidebar {
 	h1 {
@@ -787,9 +863,6 @@ div.promo {
     margin-bottom: 28px;
     overflow: hidden;
   }
-  h3 {
-    margin: 0 0 6px;
-  }
   a,
   a:visited {
       color: @alt-link-color;
@@ -797,89 +870,46 @@ div.promo {
   a:hover {
   	text-decoration: underline;
   }
-  div.social {
-    margin-bottom: 20px;
-    ul {
-      font-size: 90%;
-      .no-indent;
-      li {
-        float: left;
-        margin: 0 6px 8px 0;
-        a {
-          padding: 1px 3px;
-          background-color: rgba(255,255,255,.2);
-          &:hover {
-            background-color: rgba(255,255,255,.4);
-          }
+}	
+div.social {
+  margin-bottom: 20px;
+  ul {
+    font-size: 90%;
+    .no-indent;
+    li {
+      float: left;
+      margin: 0 6px 8px 0;
+      a {
+        padding: 1px 3px;
+        background-color: rgba(255,255,255,.2);
+        &:hover {
+          background-color: rgba(255,255,255,.4);
         }
       }
     }
-    div.twitter-all {
-    	margin-bottom: 16px;
-    	overflow: hidden;
-      li {
-        float: left;
-      }
-    }
-    div.fb-all {
-   		overflow: hidden;
+  }
+  div.twitter-all {
+  	margin-bottom: 16px;
+  	overflow: hidden;
+    li {
+      float: left;
     }
   }
-  .block {
-  	margin-bottom: 30px;
-  	font-size: 110%;
-  }
-  div.address address {
-  	line-height: 1.4;
-  }
-  div.hours {
-  	span {
-  		display: block;
-  		&.lunch-hours {
-  			margin-bottom: 8px;
-  		}
-  	}
-  }
-  div.friends {
-  	ul {
-  		.no-indent;
-  		li {
-  			padding: 4px 0 4px 36px;
-  			margin-bottom: 4px;
-  			background: transparent url(../../img/icon-sprite.png) no-repeat left top;
-  			&.facebook {
-  				background-position: -3px -1px;
-  			}
-  			&.twitter {
-  				background-position: -3px -34px;
-  			}
-  			&.foursquare {
-  				background-position: -3px -66px;
-  			}
-  		}
-  	}
-  }
-  div.signup {    
-    input {
-      width: 73.6%; 
-    }
-    button {
-    	width: 14%;
-    	padding-left: 0;
-    	padding-right: 0;
-    }
-  }
-  div.footer-btm {
-    clear: both;
-    font-size: 70%;
-    overflow: hidden;
-    padding-bottom: 10px;
-    background-color: rgba(0,0,0,.3);
-    div.footer-btm-inner {
-      padding: 10px 0;
-    }   
+  div.fb-all {
+ 		overflow: hidden;
   }
 }
+div.footer-btm {
+  clear: both;
+  font-size: 70%;
+  overflow: hidden;
+  padding-bottom: 10px;
+  background-color: rgba(0,0,0,.3);
+  div.footer-btm-inner {
+    padding: 10px 0;
+  }   
+}
+
 
 /* @end 3C. FOOTER */
 
@@ -888,14 +918,258 @@ div.promo {
 
 /* @group 4. MEDIA QUERIES
 --------------------------------------------- */
-
-@media only all and (max-width : 1024px) {
-	body {
+@media all and (min-width: 450px) {
+	div.reserve {
+		form.reserve-form {
+			span.reserve-time {
+				width: 39%;
+			}
+		}
+	}
+}
+@media all and (min-width: 550px) {
+	div.rest-welcome {
+		div.rest-welcome-inner {
+			.address,
+			.hours {
+				float: left;
+				width: 48%;
+				border-bottom: none;
+				margin-bottom: 0;
+			}
+			.hours {
+				float: right;
+			}
+			.address-hours {
+				border-bottom: @border-dotted;
+				overflow: hidden;
+				margin-bottom: 20px;
+			}
+		}
+	}
+	.main-footer-inner {
+		.address,
+		.hours,
+		.friends,
+		.signup {
+			float: left;
+			width: 48%;
+		}
+		.hours,
+		.signup {
+			float: right;
+		}
+		.address,
+		.hours {
+			margin-bottom: 30px;
+		}
+		.friends {
+			clear: both;
+		}
+	}
+}
+@media all and (min-width: 620px) {
+	div.rest-main-inner {
+		.whats-happening,
+		.follow-us {
+			float: left;
+			width: 48%;
+		}
+		.follow-us {
+			float: right;
+		}
+		.promo {
+			clear: both;
+		}
+	}
+}
+@media all and (min-width: 780px) {
+	.rest #main-container {
+		background: #F3ECE4 url('../../img/em-img3.jpg') no-repeat center top;
+		background-attachment: fixed;
+	}
+	#main-nav {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 5;
+		margin-top: 0;
+		text-align: center;
+		.mainnavul {
+			padding-bottom: 0;  	
+	  	li {
+	  		display: inline-block;
+	  		a {
+	  			font-family: @alt-header-font;
+	  			font-size: 90%;
+	  			padding: 5px 10% 6px;
+	  			background-image: url(../../img/pointer.png);
+  			  background-position: center 40px;
+  			  background-repeat: no-repeat;
+  			  color: #FFF;
+		  		&:hover,
+		  		&:active,
+		  		&.active {
+		  			background-position: center bottom;
+		  			background-color: #660000;
+		  			color: #F0EBD6;
+		  		}
+	  		}
+	  	}
+	  }
+	  span.tab {
+	  	display: none;
+	  }
+	}
+	#sub-head {
+		background-color: rgba(0, 0, 0, 0.6);
+		margin-top: 0;
+		position: fixed;
+		top: 32px;
+		z-index: 2;
+		width: 100%;
+		#sub-nav {			
+			ul {
+				margin: 0 auto;
+				width: 608px;
+				overflow: hidden;
+				li {
+					width: auto;
+					border: none;
+					border-right: 1px solid rgba(255, 255, 255, 0.4);
+					font-size: 1.4em;
+					&.menu-our-team {
+						clear: none;
+					}
+					a {
+						display: block;
+						text-align: center;
+						padding: 18px 18px 16px;
+						color: #fff;
+						width: auto;
+						&:hover {
+							color: #006699;
+						}
+					}
+				}
+			}
+		}
+	}
+	.rest-main-img {
+		display: none;
+	}
+	.rest #main-content {
+		padding-top: 151px;
+		.rest-welcome {
+			.rest-welcome-inner {
+				background-color: rgba(255, 255, 255, 0.9);
+				width: 50%;
+				font-size: 85%;
+				padding: 26px 3.48837% 16px;
+				float: right;
+				clear: right;		
+			}
+		}		
+	}
+	.main-footer-inner {
+		.address,
+		.hours,
+		.friends {
+			float: left;
+			width: 33%;
+		}
+		.friends {
+			clear: none;
+		}
+		.signup {
+			clear: both;
+			width: 100%;
+		}
+	}
+}
+@media all and (min-width: 860px) {
+	#main-nav {
+		.mainnavul {
+	  	li {
+	  		a {
+	  			font-size: 100%;
+				}
+			}
+		}
+	}
+	.rest #main-content {
+		.rest-welcome {
+			.rest-welcome-inner {
+				width: 36%;
+			}
+		}		
+		.rest-main-inner {
+			font-size: 85%;
+			.block {
+				margin-right: 1.98113%;
+				float: left;
+			}
+			.whats-happening {
+				width: 40.56603%
+			}
+			.follow-us {
+				width: 32.07547%;
+				margin-bottom: 0;
+			}
+			#sidebar {
+				float: right;
+				width: 23.5849%;			
+			}
+			.reserve {
+				float: right;
+				width: 23.5849%;
+				margin-right: 0;
+				form.reserve-form {
+					span.reserve-time {
+						width: 32%;
+					}
+					span.reserve-date input {
+						background-position: right -98px;
+					}
+				}
+			}
+		}		
+	}
+	#main-footer {
+		font-size: 90%;
+		.block {
+			width: 23.5849%;
+		}
+		.signup {
+			clear: none;
+		}
 	}
 }
 
-
-
-
-
 /* @end 4. MEDIA QUERIES */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

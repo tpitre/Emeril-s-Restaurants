@@ -159,15 +159,15 @@
         <header id="city-filter">          
           <span>Filter by City</span>          
           <ul>
-            <li class="first"><a href="">New Orleans</a></li>
-            <li><a href="">Las Vegas</a></li>
-            <li><a href="">Orlando</a></li>
-            <li><a href="">Bethlehem</a></li>
-            <li class="last"><a href="">Charlotte</a></li>
+            <li class="first filter-nola" data-city-filter="New Orleans"><a href="">New Orleans</a></li>
+            <li class="filter-vegas"><a href="" data-city-filter="Las Vegas">Las Vegas</a></li>
+            <li class="filter-orlando"><a href="" data-city-filter="Orlando">Orlando</a></li>
+            <li class="filter-bethlehem"><a href="" data-city-filter="Bethlehem">Bethlehem</a></li>
+            <li class="last filter-charlotte" data-city-filter="Charlotte"><a href="">Charlotte</a></li>
           </ul>
         </header> <!-- /#city-filter -->
       
-        <section class="rest-cities city-nola">
+        <section class="rest-cities city-nola" data-city-filter="New Orleans">
           <h1>New Orleans, Louisiana</h1>
           <ul>
             <li>
@@ -190,7 +190,7 @@
             </li>
           </ul>
         </section>
-        <section class="rest-cities city-vegas">
+        <section class="rest-cities city-vegas" data-city-filter="Las Vegas">
           <h1>Las Vegas, Nevada</h1>
           <ul>
             <li>
@@ -219,7 +219,7 @@
             </li>
           </ul>
         </section>
-        <section class="rest-cities city-orlando">
+        <section class="rest-cities city-orlando" data-city-filter="Orlando">
           <h1>Orlando, Florida</h1>
           <ul>
             <li>

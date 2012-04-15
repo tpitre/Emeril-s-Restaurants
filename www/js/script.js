@@ -207,7 +207,17 @@ $(function(){
 	er.toggleGallery();
 	//er.transformNav();
 	er.initSlideshow();
-				
+	
+	
+	$('#city-filter').find('li').click(function(e){
+		e.preventDefault();
+		
+		
+		if ($('.rest-cities').attr('data-city-filter') == $(this).attr('data-city-filter')) {
+			console.log($('.rest-cities').attr('data-city-filter'));
+		}
+	});
+	
 });
 
 

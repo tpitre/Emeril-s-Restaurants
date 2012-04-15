@@ -249,13 +249,13 @@ a.see-more:hover {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
 #main-nav ul {
-  margin: 4px 0;
-  padding: 0;
+  padding: 4px 0;
   list-style: none;
 }
 #main-nav .mainnavul {
   z-index: 10;
   position: relative;
+  overflow: hidden;
 }
 #main-nav li {
   margin: 0;
@@ -410,9 +410,10 @@ section.rest-cities ul li h2 {
   margin-top: 20px;
 }
 #sub-head {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   margin-top: 14px;
+  clear: both;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -453,7 +454,7 @@ section.rest-cities ul li h2 {
   font-size: 1.2em;
   text-transform: uppercase;
   float: left;
-  width: 33.23%;
+  width: 33.2%;
 }
 #sub-nav ul li.menu-home, #sub-nav ul li.menu-menu, #sub-nav ul li.menu-photos {
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -468,14 +469,13 @@ section.rest-cities ul li h2 {
   clear: left;
 }
 #sub-nav ul li.menu-photos, #sub-nav ul li.menu-contact {
-  width: 33.6%;
+  width: 33.3%;
 }
 #sub-nav ul li a {
   display: block;
   text-align: center;
-  padding: 2px 0;
+  padding: 6px 0 4px;
   width: 100%;
-  color: #fff;
 }
 #sub-nav ul li a:hover {
   color: #006699;
@@ -530,24 +530,51 @@ div.rest-welcome {
   padding: 0 2%;
 }
 div.rest-welcome div.rest-welcome-inner {
-  background-color: rgba(255, 255, 255, 0.75);
-  padding: 26px 3.48837% 16px;
+  background: url(../../img/shadow-btm.png) repeat-x left bottom rgba(255, 255, 255, 0.75);
+  padding: 12px 3.48837% 16px;
   /* (30 / 370) / 2 */
 
-  float: right;
-  clear: right;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+div.rest-welcome div.rest-welcome-inner .rest-main-img {
+  margin-bottom: 16px;
+  width: 100%;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 }
 div.rest-welcome div.rest-welcome-inner h1 {
   margin: 0 0 16px;
+  text-align: center;
 }
 div.rest-welcome div.rest-welcome-inner h2 {
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin: 4px 0 8px;
   font-family: "proxima-nova-1", "proxima-nova-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   text-transform: none;
   letter-spacing: 0;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+div.rest-welcome div.rest-welcome-inner .block {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #a6a6a6;
+}
+div.rest-welcome div.rest-welcome-inner .address, div.rest-welcome div.rest-welcome-inner .hours {
+  padding-top: 6px;
+  border-top: 4px solid #A6A6A6;
+  border-bottom: none;
+}
+div.rest-welcome div.rest-welcome-inner .hours {
+  border-bottom: 1px dotted #a6a6a6;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+div.rest-welcome div.rest-welcome-inner div.rest-intro {
+  clear: both;
 }
 div.rest-welcome div.rest-welcome-inner div.rest-intro p {
   margin: 6px 0 16px;
@@ -556,11 +583,12 @@ div.rest-welcome div.rest-welcome-inner div.rest-intro p {
   line-height: 1.43;
 }
 div.rest-welcome div.rest-welcome-inner div.rest-special {
-  border-top: 1px dotted #a6a6a6;
+  margin: 20px 0 0;
+  border-bottom: none;
 }
 div.rest-welcome div.rest-welcome-inner div.rest-special h3 {
   font-family: "proxima-nova-1", "proxima-nova-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-bottom: 4px;
   font-family: "proxima-nova-1", "proxima-nova-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -574,7 +602,6 @@ div.rest-welcome div.rest-welcome-inner div.rest-special p {
 section.rest-main {
   clear: both;
   padding: 24px 0;
-  margin-top: 46px;
   border-top: 1px solid #fff;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
@@ -622,7 +649,6 @@ div.whats-happening ul li div.push-feat-img {
   /*margin-left: 34.05405%;*/
   /* 126 / 370 */
 
-  margin-left: 126px;
 }
 div.whats-happening ul li h3 {
   margin: 0 0 6px;
@@ -647,6 +673,7 @@ div.follow-us a.avatar img {
 }
 div.follow-us a.avatar h3 {
   margin: 0;
+  line-height: 1;
 }
 div.follow-us ul li {
   border-bottom: 1px dotted #a6a6a6;
@@ -657,12 +684,9 @@ div.follow-us ul li {
 div.follow-us ul li span.tweet-meta {
   display: block;
   text-align: right;
-  font-size: 0.875em;
-  /* 14px / 16px */
-
-  line-height: 1.4375em;
-  /* 23px / 16px */
-
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 75%;
 }
 div.follow-us ul li span.tweet-meta a {
   color: #990000;
@@ -683,7 +707,7 @@ div.reserve h2 {
 }
 div.reserve form.reserve-form {
   font-size: 90%;
-  overflow: hidden;
+  width: 100%;
 }
 div.reserve form.reserve-form label {
   text-transform: uppercase;
@@ -697,7 +721,6 @@ div.reserve form.reserve-form select {
 div.reserve form.reserve-form span {
   display: block;
   float: left;
-  overflow: hidden;
   margin-bottom: 12px;
 }
 div.reserve form.reserve-form span.reserve-rest {
@@ -705,21 +728,15 @@ div.reserve form.reserve-form span.reserve-rest {
   margin-bottom: 12px;
 }
 div.reserve form.reserve-form span.reserve-date {
-  width: 42.4%;
-  /* 106 / 250 */
-
-  margin-right: 3.6%;
-  /* 9 / 250 */
-
+  width: 44%;
+  margin-right: 10px;
 }
 div.reserve form.reserve-form span.reserve-date input {
   width: 86%;
-  background: #ffffff url(../../img/icon-sprite.png) no-repeat right -97px;
+  background: #ffffff url(../../img/icon-sprite.png) no-repeat right -96px;
 }
 div.reserve form.reserve-form span.reserve-time {
-  width: 32%;
-  /* 80 / 250 */
-
+  width: 33%;
 }
 div.reserve form.reserve-form span.reserve-size {
   float: right;
@@ -727,10 +744,59 @@ div.reserve form.reserve-form span.reserve-size {
 div.reserve form.reserve-form button {
   font-size: .74em;
   float: right;
+  clear: both;
 }
 div.promo a {
   display: block;
   text-align: center;
+}
+.block {
+  margin-bottom: 30px;
+  font-size: 110%;
+}
+.block h3 {
+  margin: 0 0 6px;
+}
+div.address address {
+  line-height: 1.4;
+}
+div.hours span {
+  display: block;
+}
+div.hours span.lunch-hours {
+  margin-bottom: 8px;
+}
+div.friends ul {
+  margin: 0;
+  padding: 0;
+}
+div.friends ul li {
+  list-style: none;
+}
+div.friends ul li {
+  padding: 4px 0 4px 36px;
+  margin-bottom: 0;
+  background: transparent url(../../img/icon-sprite.png) no-repeat left top;
+}
+div.friends ul li.facebook {
+  background-position: -3px -1px;
+}
+div.friends ul li.twitter {
+  background-position: -3px -34px;
+}
+div.friends ul li.foursquare {
+  background-position: -3px -66px;
+}
+div.friends ul li.pinterest {
+  background-position: -3px -324px;
+}
+div.signup input {
+  width: 73.6%;
+}
+div.signup button {
+  width: 14%;
+  padding-left: 0;
+  padding-right: 0;
 }
 #sidebar h1 {
   margin-top: 0;
@@ -880,104 +946,245 @@ div.promo a {
   margin-bottom: 28px;
   overflow: hidden;
 }
-#main-footer h3 {
-  margin: 0 0 6px;
-}
 #main-footer a, #main-footer a:visited {
   color: #ffffff;
 }
 #main-footer a:hover {
   text-decoration: underline;
 }
-#main-footer div.social {
+div.social {
   margin-bottom: 20px;
 }
-#main-footer div.social ul {
+div.social ul {
   font-size: 90%;
   margin: 0;
   padding: 0;
 }
-#main-footer div.social ul li {
+div.social ul li {
   list-style: none;
 }
-#main-footer div.social ul li {
+div.social ul li {
   float: left;
   margin: 0 6px 8px 0;
 }
-#main-footer div.social ul li a {
+div.social ul li a {
   padding: 1px 3px;
   background-color: rgba(255, 255, 255, 0.2);
 }
-#main-footer div.social ul li a:hover {
+div.social ul li a:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-#main-footer div.social div.twitter-all {
+div.social div.twitter-all {
   margin-bottom: 16px;
   overflow: hidden;
 }
-#main-footer div.social div.twitter-all li {
+div.social div.twitter-all li {
   float: left;
 }
-#main-footer div.social div.fb-all {
+div.social div.fb-all {
   overflow: hidden;
 }
-#main-footer .block {
-  margin-bottom: 30px;
-  font-size: 110%;
-}
-#main-footer div.address address {
-  line-height: 1.4;
-}
-#main-footer div.hours span {
-  display: block;
-}
-#main-footer div.hours span.lunch-hours {
-  margin-bottom: 8px;
-}
-#main-footer div.friends ul {
-  margin: 0;
-  padding: 0;
-}
-#main-footer div.friends ul li {
-  list-style: none;
-}
-#main-footer div.friends ul li {
-  padding: 4px 0 4px 36px;
-  margin-bottom: 4px;
-  background: transparent url(../../img/icon-sprite.png) no-repeat left top;
-}
-#main-footer div.friends ul li.facebook {
-  background-position: -3px -1px;
-}
-#main-footer div.friends ul li.twitter {
-  background-position: -3px -34px;
-}
-#main-footer div.friends ul li.foursquare {
-  background-position: -3px -66px;
-}
-#main-footer div.signup input {
-  width: 73.6%;
-}
-#main-footer div.signup button {
-  width: 14%;
-  padding-left: 0;
-  padding-right: 0;
-}
-#main-footer div.footer-btm {
+div.footer-btm {
   clear: both;
   font-size: 70%;
   overflow: hidden;
   padding-bottom: 10px;
   background-color: rgba(0, 0, 0, 0.3);
 }
-#main-footer div.footer-btm div.footer-btm-inner {
+div.footer-btm div.footer-btm-inner {
   padding: 10px 0;
 }
 /* @end 3C. FOOTER */
 /* @end 3. MAIN */
 /* @group 4. MEDIA QUERIES
 --------------------------------------------- */
-@media only all and (max-width: 1024px) {
-  
+@media all and (min-width: 450px) {
+  div.reserve form.reserve-form span.reserve-time {
+    width: 39%;
+  }
+}
+@media all and (min-width: 550px) {
+  div.rest-welcome div.rest-welcome-inner .address, div.rest-welcome div.rest-welcome-inner .hours {
+    float: left;
+    width: 48%;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  div.rest-welcome div.rest-welcome-inner .hours {
+    float: right;
+  }
+  div.rest-welcome div.rest-welcome-inner .address-hours {
+    border-bottom: 1px dotted #a6a6a6;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .main-footer-inner .address,
+  .main-footer-inner .hours,
+  .main-footer-inner .friends,
+  .main-footer-inner .signup {
+    float: left;
+    width: 48%;
+  }
+  .main-footer-inner .hours, .main-footer-inner .signup {
+    float: right;
+  }
+  .main-footer-inner .address, .main-footer-inner .hours {
+    margin-bottom: 30px;
+  }
+  .main-footer-inner .friends {
+    clear: both;
+  }
+}
+@media all and (min-width: 620px) {
+  div.rest-main-inner .whats-happening, div.rest-main-inner .follow-us {
+    float: left;
+    width: 48%;
+  }
+  div.rest-main-inner .follow-us {
+    float: right;
+  }
+  div.rest-main-inner .promo {
+    clear: both;
+  }
+}
+@media all and (min-width: 780px) {
+  .rest #main-container {
+    background: #f3ece4 url('../../img/em-img3.jpg') no-repeat center top;
+    background-attachment: fixed;
+  }
+  #main-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    margin-top: 0;
+    text-align: center;
+  }
+  #main-nav .mainnavul {
+    padding-bottom: 0;
+  }
+  #main-nav .mainnavul li {
+    display: inline-block;
+  }
+  #main-nav .mainnavul li a {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 90%;
+    padding: 5px 10% 6px;
+    background-image: url(../../img/pointer.png);
+    background-position: center 40px;
+    background-repeat: no-repeat;
+    color: #FFF;
+  }
+  #main-nav .mainnavul li a:hover, #main-nav .mainnavul li a:active, #main-nav .mainnavul li a.active {
+    background-position: center bottom;
+    background-color: #660000;
+    color: #F0EBD6;
+  }
+  #main-nav span.tab {
+    display: none;
+  }
+  #sub-head {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: 0;
+    position: fixed;
+    top: 32px;
+    z-index: 2;
+    width: 100%;
+  }
+  #sub-head #sub-nav ul {
+    margin: 0 auto;
+    width: 608px;
+    overflow: hidden;
+  }
+  #sub-head #sub-nav ul li {
+    width: auto;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 1.4em;
+  }
+  #sub-head #sub-nav ul li.menu-our-team {
+    clear: none;
+  }
+  #sub-head #sub-nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 18px 18px 16px;
+    color: #fff;
+    width: auto;
+  }
+  #sub-head #sub-nav ul li a:hover {
+    color: #006699;
+  }
+  .rest-main-img {
+    display: none;
+  }
+  .rest #main-content {
+    padding-top: 151px;
+  }
+  .rest #main-content .rest-welcome .rest-welcome-inner {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 50%;
+    font-size: 85%;
+    padding: 26px 3.48837% 16px;
+    float: right;
+    clear: right;
+  }
+  .main-footer-inner .address, .main-footer-inner .hours, .main-footer-inner .friends {
+    float: left;
+    width: 33%;
+  }
+  .main-footer-inner .friends {
+    clear: none;
+  }
+  .main-footer-inner .signup {
+    clear: both;
+    width: 100%;
+  }
+}
+@media all and (min-width: 860px) {
+  #main-nav .mainnavul li a {
+    font-size: 100%;
+  }
+  .rest #main-content .rest-welcome .rest-welcome-inner {
+    width: 36%;
+  }
+  .rest #main-content .rest-main-inner {
+    font-size: 85%;
+  }
+  .rest #main-content .rest-main-inner .block {
+    margin-right: 1.98113%;
+    float: left;
+  }
+  .rest #main-content .rest-main-inner .whats-happening {
+    width: 40.56603%;
+  }
+  .rest #main-content .rest-main-inner .follow-us {
+    width: 32.07547%;
+    margin-bottom: 0;
+  }
+  .rest #main-content .rest-main-inner #sidebar {
+    float: right;
+    width: 23.5849%;
+  }
+  .rest #main-content .rest-main-inner .reserve {
+    float: right;
+    width: 23.5849%;
+    margin-right: 0;
+  }
+  .rest #main-content .rest-main-inner .reserve form.reserve-form span.reserve-time {
+    width: 32%;
+  }
+  .rest #main-content .rest-main-inner .reserve form.reserve-form span.reserve-date input {
+    background-position: right -98px;
+  }
+  #main-footer {
+    font-size: 90%;
+  }
+  #main-footer .block {
+    width: 23.5849%;
+  }
+  #main-footer .signup {
+    clear: none;
+  }
 }
 /* @end 4. MEDIA QUERIES */
