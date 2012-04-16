@@ -565,7 +565,7 @@ div.rest-welcome div.rest-welcome-inner .block {
 }
 div.rest-welcome div.rest-welcome-inner .address, div.rest-welcome div.rest-welcome-inner .hours {
   padding-top: 6px;
-  border-top: 4px solid #A6A6A6;
+  border-top: 4px solid #069;
   border-bottom: none;
 }
 div.rest-welcome div.rest-welcome-inner .hours {
@@ -575,6 +575,9 @@ div.rest-welcome div.rest-welcome-inner .hours {
 }
 div.rest-welcome div.rest-welcome-inner div.rest-intro {
   clear: both;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 div.rest-welcome div.rest-welcome-inner div.rest-intro p {
   margin: 6px 0 16px;
@@ -999,8 +1002,21 @@ div.footer-btm div.footer-btm-inner {
 /* @group 4. MEDIA QUERIES
 --------------------------------------------- */
 @media all and (min-width: 450px) {
+  div.reserve form.reserve-form {
+    width: 98%;
+    padding: 0 1%;
+  }
   div.reserve form.reserve-form span.reserve-time {
     width: 39%;
+  }
+  .footer-btm {
+    padding: 10px;
+  }
+  .footer-btm .legal {
+    float: left;
+  }
+  .footer-btm .dotcom-logo {
+    float: right;
   }
 }
 @media all and (min-width: 550px) {
@@ -1045,6 +1061,19 @@ div.footer-btm div.footer-btm-inner {
   }
   div.rest-main-inner .promo {
     clear: both;
+  }
+  div.rest-main-inner .reserve {
+    float: right;
+    margin-right: 0;
+    width: 48%;
+  }
+  div.rest-main-inner .reserve form.reserve-form span.reserve-time {
+    width: 37%;
+  }
+  div.rest-main-inner #sidebar {
+    float: left;
+    width: 48%;
+    clear: none;
   }
 }
 @media all and (min-width: 780px) {
@@ -1167,12 +1196,15 @@ div.footer-btm div.footer-btm-inner {
     width: 23.5849%;
   }
   .rest #main-content .rest-main-inner .reserve {
-    float: right;
     width: 23.5849%;
+    float: right;
     margin-right: 0;
   }
   .rest #main-content .rest-main-inner .reserve form.reserve-form span.reserve-time {
     width: 32%;
+  }
+  .rest #main-content .rest-main-inner .reserve form.reserve-form span.reserve-date {
+    width: 41%;
   }
   .rest #main-content .rest-main-inner .reserve form.reserve-form span.reserve-date input {
     background-position: right -98px;
